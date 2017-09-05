@@ -60,6 +60,8 @@ The subject of the email must exactly match `tms_load:<<API TOKEN>>`
 * charges_customer_total
 * created_at
 * updated_at
+* reference_x_label (x is 1-4)
+* reference_x_value (x is 1-4)
 * tms_created_at - legacy, don't provide if you set created_at
 * tms_updated_at - legacy, don't provide if you set updated_at
 
@@ -113,6 +115,12 @@ The subject of the email must exactly match `tms_shipment:<<API TOKEN>>`
 * ship_ref
 * po
 * pickup_reference
+* reference_x_label (x is 1-6)
+* reference_x_value (x is 1-6)
+* pick_reference_x_label (x is 1-6)
+* pick_reference_x_value (x is 1-6)
+* delivery_reference_x_label (x is 1-6)
+* delivery_reference_x_value (x is 1-6)
 * created_at
 * updated_at
 
