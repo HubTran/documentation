@@ -78,7 +78,14 @@ choose which payloads you want to use and ignore the rest.
 
 ## Processed Payload
 
-Same as the approved payload except the type is "processed".
+Same as the approved payload except the type is "processed" and
+"approver" is "processor"
+
+```
+"processor": {
+  "email": "test@example.com"
+}
+```
 
 ## Exception Payload
 
@@ -94,6 +101,11 @@ Same as the approved payload except the type is "processed".
     },
     "type": "exception",
     "id": 1,
+    "invoice": {
+      "processor": {
+        "email": "test@example.com"
+      }
+    },
     "exceptions": [
       {
         "id": 1,
