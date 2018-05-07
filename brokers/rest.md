@@ -14,8 +14,10 @@ All dates + times should be in
 * [Create + Update Carriers](#create--update-carriers)
 * [Bulk Create + Update Carriers](#bulk-create--update-carriers)
 * [Create Payments](#create-payments)
-* [Clear Exceptions](#clear-exceptions)
 * [Document Upload](#document-upload)
+* [Clear Exceptions](#clear-exceptions)
+* [List Approved Invoices](#list-approved-invoices)
+* [Mark Approved Invoice as Received](#mark-approved-invoice-as-received)
 
 ## Create + Update Loads
 
@@ -741,7 +743,6 @@ On Failure:
 
 ## Clear Exceptions
 
-
 POST https://api.hubtran.com/tms/carrier_invoices/:id/exceptions/clear
 
 ```
@@ -755,6 +756,89 @@ Request:
 
 ```
 {}
+```
+
+Response:
+
+```
+{
+  "ok": true
+}
+```
+
+## List Approved Invoices
+
+GET https://api.hubtran.com/tms/carrier_invoices/approved
+
+```
+curl -X GET https://api.hubtran.com/tms/carrier_invoices/approved \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
+```
+
+Response:
+
+```
+{
+  "carrier_invoices": [
+    {
+      "number": "invoice-number",
+      "state": "approved",
+      "date": "1981-08-11",
+      "date_to_pay": "1981-08-13",
+      "amount_to_pay": "1110.2",
+      "quickpay": false,
+      "approver": {
+        "email": "test@example.com"
+      }
+      "carrier": {
+        "external_id": "carrier-external-id"
+      },
+      "documents": [
+        {
+          "id": 14,
+          "type": "proofOfDelivery",
+          "proof_of_delivery": true,
+          "url": "https://api.hubtran.com/downloads/documents/unique-id",
+          "visibility": {
+            "carrier": true,
+            "customer": true
+          }
+        }
+      ],
+      "combined_document_urls": [ // All documents of the same type, combined
+        {
+          "type": "proofOfDelivery",
+          "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
+          "proof_of_delivery": true,
+          "visibility": {
+            "carrier": true,
+            "customer": true
+          }
+        }
+      ],
+      "remit_to": {
+        "name": "name",
+        "address_line_1": "address1",
+        "address_line_2": "address2",
+        "city": "city",
+        "state": "state",
+        "postal_code": "12345",
+        "country": "USA"
+      }
+    }
+  ]
+}
+```
+
+## Mark Approved Invoice as Received
+
+POST https://api.hubtran.com/tms/carrier_invoices/:id/received
+
+```
+curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/received \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
 ```
 
 Response:
