@@ -776,10 +776,18 @@ curl -X GET https://api.hubtran.com/tms/carrier_invoices/approved \
   -H "Authorization: Token token=YOUR_TOKEN"
 ```
 
+Optional URL params:
+
+1. `results_per_page` - number of results to return per page, max 50
+2. `page` - which page of results to return based on `results_per_page`
+
 Response:
 
 ```
 {
+  "results_per_page": 20, // how many results per page
+  "page_count": 2, // number of pages using results_per_page
+  "current_page": 1, // current page
   "carrier_invoices": [
     {
       "number": "invoice-number",
