@@ -790,6 +790,7 @@ Response:
   "current_page": 1, // current page
   "carrier_invoices": [
     {
+      "id": 123,
       "number": "invoice-number",
       "state": "approved",
       "date": "1981-08-11",
@@ -798,9 +799,12 @@ Response:
       "quickpay": false,
       "approver": {
         "email": "test@example.com"
-      }
+      },
       "carrier": {
         "external_id": "carrier-external-id"
+      },
+      load: {
+        "external_id": "load-external-id"
       },
       "documents": [
         {
