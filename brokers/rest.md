@@ -806,6 +806,15 @@ Response:
       load: {
         "external_id": "load-external-id"
       },
+      "line_items": [
+        {
+          "description": "line item description",
+          "total": 123.45,
+          "carrier": {
+            "external_id": "carrier-external-id",
+          }
+        }
+      ],
       "documents": [
         {
           "id": 14,
