@@ -730,7 +730,11 @@ Response:
 
 On success:
 ```
-{}
+{
+  "document": {
+    "id": 5, // HubTran's internal id for the document
+  }
+}
 ```
 
 On Failure:
