@@ -733,6 +733,7 @@ On success:
 {
   "document": {
     "id": 5, // HubTran's internal id for the document
+    "token": "some-random-token" // HubTran's token that can be used in document URLs
   }
 }
 ```
