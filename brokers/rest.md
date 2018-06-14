@@ -68,6 +68,7 @@ Request:
     "ppe": "ppe",
     "quote_number": "quote-number",
     "ship_ref": "ship-ref",
+    "brokered": true,
     "origin": {
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -134,6 +135,8 @@ Request:
         "description": "line item description",
         "total": 123.45,
         "quantity": 5,
+        "type_code": "abc",
+        "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
@@ -293,6 +296,8 @@ Response:
         "description": "line item description",
         "total": 123.45,
         "quantity": 5,
+        "type_code": "abc",
+        "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
@@ -815,6 +820,9 @@ Response:
         {
           "description": "line item description",
           "total": 123.45,
+          "quantity": 3,
+          "type_code": "abc",
+          "customer_total": 150.00,
           "carrier": {
             "external_id": "carrier-external-id",
           }
