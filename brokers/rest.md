@@ -436,6 +436,14 @@ Request:
           "external_id": "load-external-id"
         }
       ],
+      "charges": {
+        "total": 1200.23,
+        "currency": "USD",
+        "line_haul": 1100.32,
+        "fuel": 129.32,
+        "detention": 22.22,
+        "other": 87.87
+      },
       "line_items": [
         {
           "description": "line item description",
@@ -444,13 +452,26 @@ Request:
           "type_code": "abc"
         }
       ],
-      "charges": {
-        "total": 1200.23,
-        "currency": "USD",
-        "line_haul": 1100.32,
-        "fuel": 129.32,
-        "detention": 22.22,
-        "other": 87.87
+      "shipped_items": [ // empty array if no shipped items
+        {
+          "external_id": "1234", // Required
+          "description": "Shipped item", // Required
+          "weight_unit": "lb",
+          "quantity": 2.0,
+          "item_type": "CARTON",
+          "hazardous_material": false,
+          "weight": 417.0,
+          "class_name": '400',
+          "nmfc": "82270",
+          "width": 10.0,
+          "height": 12.0,
+          "length": 20.0
+        }
+      ],
+      "references": { // empty object if no references
+        "Key": "Value",
+        "Key2": "Value2,Value3",
+        "Anything": "You Want"
       }
     }
   ]
