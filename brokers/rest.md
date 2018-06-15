@@ -436,6 +436,14 @@ Request:
           "external_id": "load-external-id"
         }
       ],
+      "line_items": [
+        {
+          "description": "line item description",
+          "total": 123.45,
+          "quantity": 5,
+          "type_code": "abc"
+        }
+      ],
       "charges": {
         "total": 1200.23,
         "currency": "USD",
