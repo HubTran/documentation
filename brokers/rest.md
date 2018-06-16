@@ -452,7 +452,7 @@ Request:
           "type_code": "abc"
         }
       ],
-      "shipped_items": [ // empty array if no shipped items
+      "shipped_items": [
         {
           "external_id": "1234", // Required
           "description": "Shipped item", // Required
@@ -468,7 +468,7 @@ Request:
           "length": 20.0
         }
       ],
-      "references": { // empty object if no references
+      "references": {
         "Key": "Value",
         "Key2": "Value2,Value3",
         "Anything": "You Want"
