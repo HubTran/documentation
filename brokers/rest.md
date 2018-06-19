@@ -539,6 +539,37 @@ Response:
         "fuel": 129.32,
         "detention": 22.22,
         "other": 87.87
+      },
+      "line_items": [
+        {
+          "external_id": "line_item_1", // The line external_id you sent us
+          "description": "line item description",
+          "total": 123.45,
+          "quantity": 5,
+          "rate": 2.0,
+          "type_code": "abc"
+        }
+      ],
+      "shipped_items": [
+        {
+          "external_id": "1234", // Required
+          "description": "Shipped item", // Required
+          "weight_unit": "lb",
+          "quantity": 2.0,
+          "item_type": "CARTON",
+          "hazardous_material": false,
+          "weight": 417.0,
+          "class_name": '400',
+          "nmfc": "82270",
+          "width": 10.0,
+          "height": 12.0,
+          "length": 20.0
+        }
+      ],
+      "references": {
+        "Key": "Value",
+        "Key2": "Value2,Value3",
+        "Anything": "You Want"
       }
     }
   ]
