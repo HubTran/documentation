@@ -132,9 +132,11 @@ Request:
     ],
     "line_items": [ // Displayed and used to calculate the carrier_charge.
       {
+        "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
         "quantity": 5,
+        "rate": 2.0,
         "type_code": "abc",
         "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
@@ -293,9 +295,11 @@ Response:
     ],
     "line_items": [ // Displayed and used to calculate the carrier_charge. Empty array if no line items.
       {
+        "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
         "quantity": 5,
+        "rate": 2.0,
         "type_code": "abc",
         "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
@@ -446,9 +450,11 @@ Request:
       },
       "line_items": [
         {
+          "external_id": "line_item_1", // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
           "quantity": 5,
+          "rate": 2.0,
           "type_code": "abc"
         }
       ],
@@ -846,9 +852,11 @@ Response:
       },
       "line_items": [
         {
+          "external_id": "line_item_1", // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
           "quantity": 3,
+          "rate": 2.0,
           "type_code": "abc",
           "customer_total": 150.00,
           "carrier": {
