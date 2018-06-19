@@ -758,6 +758,7 @@ Request:
 ```
 {
   "document": {
+    "external_id": "document_external_id", // Your id for the document
     "type": "rateConfirmation",
     "url": "URL of image to download. Required unless data is provided",
     "data": "base64 encoded data for image. Required unless url is provided"
@@ -772,7 +773,9 @@ On success:
 {
   "document": {
     "id": 5, // HubTran's internal id for the document
-    "token": "some-random-token" // HubTran's token that can be used in document URLs
+    "token": "some-random-token", // HubTran's token that can be used in document URLs
+    "external_id": "document_external_id", // Your id for the document
+    "type": "rateConfirmation"
   }
 }
 ```
