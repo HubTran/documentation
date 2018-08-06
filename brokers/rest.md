@@ -40,6 +40,7 @@ Request:
     "load_id": "load-id", // Required
     "external_id": "external-id", // Required
     "status": "new",
+    "brokered": true,
     "tms_created_at": "2016-07-15 19:00:00 +0200",
     "tms_updated_at": "2016-07-17 19:00:00 +0200",
     "target_ship_start": "2016-07-16 12:00:00 +0200",
@@ -68,7 +69,6 @@ Request:
     "ppe": "ppe",
     "quote_number": "quote-number",
     "ship_ref": "ship-ref",
-    "brokered": true,
     "origin": {
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -204,6 +204,7 @@ Response:
     "load_id": "load-id", // The load_id you sent us when creating the load
     "external_id": "external-id", // The external_id you sent us when creating the load
     "status": "new",
+    "brokered": true,
     "tms_created_at": "2016-07-15 19:00:00 +0200",
     "tms_updated_at": "2016-07-17 19:00:00 +0200",
     "target_delivery_start": "2016-07-17 19:00:00 +0200",
