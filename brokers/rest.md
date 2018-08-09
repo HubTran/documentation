@@ -18,6 +18,7 @@ All dates + times should be in
 * [Clear Exceptions](#clear-exceptions)
 * [List Approved Invoices](#list-approved-invoices)
 * [Mark Approved Invoice as Received](#mark-approved-invoice-as-received)
+* [Mark Approved Invoice as Not Received](#mark-approved-invoice-as-not-received)
 
 ## Create + Update Loads
 
@@ -956,6 +957,27 @@ POST https://api.hubtran.com/tms/carrier_invoices/:id/received
 
 ```
 curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/received \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
+```
+
+Response:
+
+```
+{
+  "ok": true
+}
+```
+
+## Mark Approved Invoice as Not Received
+
+This is more for when you're developing and you want to reset an invoice
+to mark as received again.
+
+POST https://api.hubtran.com/tms/carrier_invoices/:id/not_received
+
+```
+curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/not_received \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN"
 ```
