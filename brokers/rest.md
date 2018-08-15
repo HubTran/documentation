@@ -59,7 +59,7 @@ Request:
     "primary_reference_type": "primary-reference-type",
     "quantity": 1,
     "weight": 1000,
-    "distance": "500",
+    "distance": 500,
     "mode": "truck",
     "freight_class": "class",
     "po": "po",
@@ -136,10 +136,10 @@ Request:
         "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
+        "customer_total": 150.00,
         "quantity": 5,
         "rate": 2.0,
         "type_code": "abc",
-        "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
@@ -150,13 +150,13 @@ Request:
     "shipped_items": [{
       "external_id": "1234", // Required
       "description": "Shipped item", // Required
-      "weight_unit": "lb",
-      "quantity": 2.0,
-      "item_type": "CARTON",
-      "hazardous_material": false,
-      "weight": 417.0,
       "class_name": '400',
+      "item_type": "CARTON",
       "nmfc": "82270",
+      "hazardous_material": false,
+      "quantity": 2.0,
+      "weight": 417.0,
+      "weight_unit": "lb",
       "width": 10.0,
       "height": 12.0,
       "length": 20.0
@@ -223,7 +223,7 @@ Response:
     "primary_reference_type": "primary-reference-type",
     "quantity": 1,
     "weight": 1000,
-    "distance": "500",
+    "distance": 500,
     "mode": "truck",
     "freight_class": "class",
     "po": "po",
@@ -300,10 +300,10 @@ Response:
         "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
+        "customer_total": 150.00,
         "quantity": 5,
         "rate": 2.0,
         "type_code": "abc",
-        "customer_total": 150.00,
         "carrier": { // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
@@ -315,13 +315,13 @@ Response:
       {
         "external_id": "1234", // Required
         "description": "Shipped item", // Required
-        "weight_unit": "lb",
-        "quantity": 2.0,
-        "item_type": "CARTON",
-        "hazardous_material": false,
-        "weight": 417.0,
         "class_name": '400',
+        "item_type": "CARTON",
         "nmfc": "82270",
+        "hazardous_material": false,
+        "quantity": 2.0,
+        "weight": 417.0,
+        "weight_unit": "lb",
         "width": 10.0,
         "height": 12.0,
         "length": 20.0
@@ -464,13 +464,13 @@ Request:
         {
           "external_id": "1234", // Required
           "description": "Shipped item", // Required
-          "weight_unit": "lb",
-          "quantity": 2.0,
-          "item_type": "CARTON",
-          "hazardous_material": false,
-          "weight": 417.0,
           "class_name": '400',
+          "item_type": "CARTON",
           "nmfc": "82270",
+          "hazardous_material": false,
+          "quantity": 2.0,
+          "weight": 417.0,
+          "weight_unit": "lb",
           "width": 10.0,
           "height": 12.0,
           "length": 20.0
@@ -556,13 +556,13 @@ Response:
         {
           "external_id": "1234", // Required
           "description": "Shipped item", // Required
-          "weight_unit": "lb",
-          "quantity": 2.0,
-          "item_type": "CARTON",
-          "hazardous_material": false,
-          "weight": 417.0,
           "class_name": '400',
+          "item_type": "CARTON",
           "nmfc": "82270",
+          "hazardous_material": false,
+          "quantity": 2.0,
+          "weight": 417.0,
+          "weight_unit": "lb",
           "width": 10.0,
           "height": 12.0,
           "length": 20.0
@@ -875,7 +875,7 @@ Response:
       "state": "approved",
       "date": "1981-08-11",
       "date_to_pay": "1981-08-13",
-      "amount_to_pay": "1110.2",
+      "amount_to_pay": 1110.2,
       "quickpay": false,
       "approver": {
         "email": "test@example.com"
@@ -891,10 +891,10 @@ Response:
           "external_id": "line_item_1", // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
+          "customer_total": 150.00,
           "quantity": 3,
           "rate": 2.0,
           "type_code": "abc",
-          "customer_total": 150.00,
           "carrier": {
             "external_id": "carrier-external-id",
           }
@@ -903,13 +903,13 @@ Response:
       "shipped_items": [{
         "external_id": "1234",
         "description": "Shipped item",
-        "weight_unit": "lb",
-        "quantity": 2.0,
-        "item_type": "CARTON",
-        "hazardous_material": false,
-        "weight": 417.0,
         "class_name": '400',
+        "item_type": "CARTON",
         "nmfc": "82270",
+        "hazardous_material": false,
+        "quantity": 2.0,
+        "weight_unit": "lb",
+        "weight": 417.0,
         "width": 10.0,
         "height": 12.0,
         "length": 20.0
