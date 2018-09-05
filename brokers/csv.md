@@ -63,6 +63,11 @@ The subject of the email must exactly match `tms_load:<<API TOKEN>>`
 * updated_at
 * reference_x_label (x is 1-4)
 * reference_x_value (x is 1-4)
+* line_item_x_description (x is 1-10)
+* line_item_x_type_code (x is 1-10)
+* line_item_x_total (x is 1-10)
+* line_item_x_customer_total (x is 1-10)
+* line_item_x_carrier_external_id (x is 1-10; value is same as external_id in the carriers file)
 * tms_created_at - legacy, don't provide if you set created_at
 * tms_updated_at - legacy, don't provide if you set updated_at
 
