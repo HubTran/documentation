@@ -993,8 +993,8 @@ Response:
 
 ## Document Types
 
-This is more of a utility endpoint so it's easy for developers to see
-what kinds of document type values they will be receiving via webhook.
+This is more of a utility endpoint so it's easy for you to see
+what kinds of document type values you will be receiving via webhook.
 
 GET https://api.hubtran.com/document_types
 
