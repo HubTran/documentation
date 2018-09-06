@@ -19,6 +19,7 @@ All dates + times should be in
 * [List Approved Invoices](#list-approved-invoices)
 * [Mark Approved Invoice as Received](#mark-approved-invoice-as-received)
 * [Mark Approved Invoice as Not Received](#mark-approved-invoice-as-not-received)
+* [Document Types](#document-types)
 
 ## Create + Update Loads
 
@@ -987,5 +988,33 @@ Response:
 ```
 {
   "ok": true
+}
+```
+
+## Document Types
+
+This is more of a utility endpoint so it's easy for developers to see
+what kinds of document type values they will be receiving via webhook.
+
+GET https://api.hubtran.com/document_types
+
+```
+curl -X GET https://api.hubtran.com/document_types \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
+```
+
+Response:
+
+```
+{
+  "enabled": [ # document types currently enabled for the account
+    {"name": "Bill of Lading / Packing Slip", "value":"billOfLading"},
+    # ...
+  ],
+  "all": [ # all the document types that COULD be enabled
+    {"name": "Bill of Lading / Packing Slip", "value":"billOfLading"},
+    # ...
+  ]
 }
 ```
