@@ -11,6 +11,7 @@ choose which payloads you want to use and ignore the rest.
 * [Approved Payload](#approved-payload)
 * [Processed Payload](#processed-payload)
 * [Exception Payload](#exception-payload)
+* [Document Types](./rest.md#document-types)
 
 ## Approved Payload
 
