@@ -21,3 +21,10 @@ delivered. A load may have one shipment or multiple shipments. A shipment may mo
 You'll also see references to "external_id". This is our way of linking objects in HubTran with objects in your TMS so it should be YOUR internal id for the object. It should be unique and immutable.
 
 At various times we'll add more keys to our webhook payloads that might not be documented. Your implementation should be able to handle us adding keys without notice. However, we'll never remove a key from the payload without giving you plenty of notice.
+
+## Document Types
+
+We've also created a [document types endpoint](./brokers/rest.md#document-types) which returns all the
+document type options as well as the ones currently enabled for your
+account. These will help you when you are mapping our document types
+in our webhook to your document storage types.

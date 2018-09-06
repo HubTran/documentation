@@ -12,11 +12,6 @@ choose which payloads you want to use and ignore the rest.
 * [Processed Payload](#processed-payload)
 * [Exception Payload](#exception-payload)
 
-We've also created a [document types endpoint](./rest.md#document-types) which returns all the
-document type options as well as the ones currently enabled for your
-account. These will help you when you are mapping our document types
-in our webhook to your document storage types.
-
 ## Approved Payload
 
 ```
