@@ -14,7 +14,6 @@ All dates + times should be in
 * [Create + Update Carriers](#create--update-carriers)
 * [Bulk Create + Update Carriers](#bulk-create--update-carriers)
 * [Create Payments](#create-payments)
-* [Document Upload](#document-upload)
 * [Clear Exceptions](#clear-exceptions)
 * [List Approved Invoices](#list-approved-invoices)
 * [Mark Approved Invoice as Received](#mark-approved-invoice-as-received)
@@ -39,18 +38,18 @@ Request:
 ```
 {
   "load": {
-    "load_id": "load-id", // Required
-    "external_id": "external-id", // Required
-    "status": "new",
+    "load_id": "load-id",                                 // Required
+    "external_id": "external-id",                         // Required
+    "status": "new",                                      // Recommended
     "brokered": true,
     "tms_created_at": "2016-07-15 19:00:00 +0200",
     "tms_updated_at": "2016-07-17 19:00:00 +0200",
     "target_ship_start": "2016-07-16 12:00:00 +0200",
     "target_ship_end": "2016-07-16 14:00:00 +0200",
-    "actual_shipped_at": "2016-07-16 13:00:00 +0200",
+    "actual_shipped_at": "2016-07-16 13:00:00 +0200",     // Recommended
     "target_delivery_start": "2016-07-17 19:00:00 +0200",
     "target_delivery_end": "2016-07-17 19:00:00 +0200",
-    "actual_delivered_at": "2016-07-17 19:00:00 +0200",
+    "actual_delivered_at": "2016-07-17 19:00:00 +0200",   // Recommended
     "require_pod": false,
     "require_weight_ticket": false,
     "require_customer_rate_confirmation": false,
@@ -71,7 +70,7 @@ Request:
     "ppe": "ppe",
     "quote_number": "quote-number",
     "ship_ref": "ship-ref",
-    "origin": {
+    "origin": {                                           // Recommended
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
       "address_line_2": "origin-address-line-2",
@@ -80,7 +79,7 @@ Request:
       "postal_code": "origin-postal-code",
       "country": "origin-country"
     },
-    "destination": {
+    "destination": {                                      // Recommended
       "name": "destination-name",
       "address_line_1": "destination-address-line-1",
       "address_line_2": "destination-address-line-2",
@@ -89,22 +88,22 @@ Request:
       "postal_code": "destination-postal-code",
       "country": "destination-country"
     },
-    "carrier": {
+    "carrier": {                                          // Recommended
       "name": "carrier-name",
       "scac": "carrier-scac",
       "external_id": "carrier-external-id"
     },
-    "customer": {
+    "customer": {                                         // Recommended
       "external_id": "customer-external-id",
       "name": "customer-name",
       "account_number": "customer-account-number"
     },
-    "shipments": [ // Used to link the load to shipments created via the shipment API
+    "shipments": [                                        // Used to link the load to shipments created via the shipment API
       {
         "external_id": "shipment-external-id"
       }
     ],
-    "charges": { // Ignored if line items are sent
+    "charges": {                                          // Recommended but ignored if line items are sent
       "total": 1200.23,
       "currency": "USD",
       "line_haul": 1100.32,
@@ -114,7 +113,7 @@ Request:
     },
     "picks": [
       {
-        "external_id": "pick-external-id", // Required
+        "external_id": "pick-external-id",                // Required
         "name": "pick-name",
         "address_line_1": "pick-address-line-1",
         "address_line_2": "pick-address-line-2",
@@ -122,7 +121,7 @@ Request:
         "state": "pick-state",
         "postal_code": "pick-postal-code",
         "country": "pick-country",
-        "shipments": [ // Required
+        "shipments": [                                    // Required
           {
             "external_id": "shipment-external-id"
           }
@@ -132,16 +131,16 @@ Request:
     "drops": [
       // same format as picks
     ],
-    "line_items": [ // Displayed and used to calculate the carrier_charge.
+    "line_items": [                                       // Recommended, displayed and used to calculate the carrier_charge.
       {
-        "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
+        "external_id": "line_item_1",                     // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
         "customer_total": 150.00,
         "quantity": 5,
         "rate": 2.0,
         "type_code": "abc",
-        "carrier": { // Used to calculate carrier_charge for each carrier
+        "carrier": {                                      // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
           "name": "carrier name"
@@ -149,8 +148,8 @@ Request:
       }
     ],
     "shipped_items": [{
-      "external_id": "1234", // Required
-      "description": "Shipped item", // Required
+      "external_id": "1234",                              // Required
+      "description": "Shipped item",                      // Required
       "class_name": '400',
       "item_type": "CARTON",
       "nmfc": "82270",
@@ -162,7 +161,7 @@ Request:
       "height": 12.0,
       "length": 20.0
     }],
-    "references": {
+    "references": {                                       // Recommended
       "Key": "Value",
       "Key2": "Value2,Value3",
       "Anything": "You Want"
@@ -202,9 +201,9 @@ Response:
 ```
 {
   "load": {
-    "id": 5, // HubTran's internal id for the load
-    "load_id": "load-id", // The load_id you sent us when creating the load
-    "external_id": "external-id", // The external_id you sent us when creating the load
+    "id": 5,                                            // HubTran's internal id for the load
+    "load_id": "load-id",                               // The load_id you sent us when creating the load
+    "external_id": "external-id",                       // The external_id you sent us when creating the load
     "status": "new",
     "brokered": true,
     "tms_created_at": "2016-07-15 19:00:00 +0200",
@@ -235,7 +234,7 @@ Response:
     "ppe": "ppe",
     "quote_number": "quote-number",
     "ship_ref": "ship-ref",
-    "origin": { // null if all fields are empty
+    "origin": {                                 // null if all fields are empty
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
       "address_line_2": "origin-address-line-2",
@@ -244,7 +243,7 @@ Response:
       "postal_code": "origin-postal-code",
       "country": "origin-country"
     },
-    "destination": { // null if all fields are empty
+    "destination": {                            // null if all fields are empty
       "name": "destination-name",
       "address_line_1": "destination-address-line-1",
       "address_line_2": "destination-address-line-2",
@@ -253,22 +252,22 @@ Response:
       "postal_code": "destination-postal-code",
       "country": "destination-country"
     },
-    "carrier": { // null if no carrier
+    "carrier": {                                // null if no carrier
       "name": "carrier-name",
       "scac": "carrier-scac",
       "external_id": "carrier-external-id"
     },
-    "customer": { // null if no customer
+    "customer": {                               // null if no customer
       "external_id": "customer-external-id",
       "name": "customer-name",
       "account_number": "customer-account-number"
     },
-    "shipments": [ // Used to link the load to shipments created via the shipment API. Empty array if no shipments.
+    "shipments": [                              // Used to link the load to shipments created via the shipment API. Empty array if no shipments.
       {
         "external_id": "shipment-external-id"
       }
     ],
-    "charges": { // object with null values if null
+    "charges": {                                // object with null values if null
       "total": 1200.23,
       "currency": "USD",
       "line_haul": 1100.32,
@@ -276,9 +275,9 @@ Response:
       "detention": 22.22,
       "other": 87.87
     },
-    "picks": [ // empty array if no picks
+    "picks": [                                  // empty array if no picks
       {
-        "external_id": "pick-external-id", // Required
+        "external_id": "pick-external-id",
         "name": "pick-name",
         "address_line_1": "pick-address-line-1",
         "address_line_2": "pick-address-line-2",
@@ -286,36 +285,36 @@ Response:
         "state": "pick-state",
         "postal_code": "pick-postal-code",
         "country": "pick-country",
-        "shipments": [ // Required
+        "shipments": [
           {
             "external_id": "shipment-external-id"
           }
         ]
       }
     ],
-    "drops": [ // empty array if no drops
+    "drops": [                                  // empty array if no drops
       // same format as picks
     ],
-    "line_items": [ // Displayed and used to calculate the carrier_charge. Empty array if no line items.
+    "line_items": [                             // Displayed and used to calculate the carrier_charge. Empty array if no line items.
       {
-        "external_id": "line_item_1", // You're id for matching up line items when sending back to your TMS
+        "external_id": "line_item_1",           // You're id for matching up line items when sending back to your TMS
         "description": "line item description",
         "total": 123.45,
         "customer_total": 150.00,
         "quantity": 5,
         "rate": 2.0,
         "type_code": "abc",
-        "carrier": { // Used to calculate carrier_charge for each carrier
+        "carrier": {                            // Used to calculate carrier_charge for each carrier
           "external_id": "carrier-external-id",
           "scac": "scac",
           "name": "carrier name"
         }
       }
     ],
-    "shipped_items": [ // empty array if no shipped items
+    "shipped_items": [                          // empty array if no shipped items
       {
-        "external_id": "1234", // Required
-        "description": "Shipped item", // Required
+        "external_id": "1234",
+        "description": "Shipped item",
         "class_name": '400',
         "item_type": "CARTON",
         "nmfc": "82270",
@@ -328,7 +327,7 @@ Response:
         "length": 20.0
       }
     ],
-    "carrier_invoices": [ // empty array if no invoices
+    "carrier_invoices": [                       // empty array if no invoices
       {
         "number": "invoice-number",
         "state": "approved",
@@ -354,7 +353,7 @@ Response:
             }
           }
         ],
-        "combined_document_urls": [ // All documents of the same type, combined
+        "combined_document_urls": [             // All documents of the same type, combined
           {
             "type": "proofOfDelivery",
             "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
@@ -376,7 +375,7 @@ Response:
         }
       }
     ],
-    "references": { // empty object if no references
+    "references": {                             // empty object if no references
       "Key": "Value",
       "Key2": "Value2,Value3",
       "Anything": "You Want"
@@ -402,16 +401,16 @@ Request:
 {
   "shipments": [
     {
-      "external_id": "shipment-external-id", // Required
-      "status": "new",
+      "external_id": "shipment-external-id",              // Required
+      "status": "new",                                    // Recommended
       "tms_created_at": "2016-07-10 20:43:00 +0300",
       "tms_updated_at": "2016-07-15 20:43:00 +0300",
       "target_ship_start": "2016-07-16 12:00:00 +0200",
       "target_ship_end": "2016-07-16 14:00:00 +0200",
-      "actual_shipped_at": "2016-07-16 13:00:00 +0200",
+      "actual_shipped_at": "2016-07-16 13:00:00 +0200",   // Recommended
       "target_delivery_start": "2016-07-17 19:00:00 +0200",
       "target_delivery_end": "2016-07-17 19:00:00 +0200",
-      "actual_delivered_at": "2016-07-17 19:00:00 +0200",
+      "actual_delivered_at": "2016-07-17 19:00:00 +0200", // Recommended
       "quantity": 1,
       "weight": 1000,
       "customer_mode": "FSC and Rate Review",
@@ -420,7 +419,7 @@ Request:
       "po": "po",
       "pickup_reference": "pickup-reference",
       "ship_ref": "C16091",
-      "origin": {
+      "origin": {                                         // Recommended
         "name": "origin-name",
         "address_line_1": "origin-address-line-1",
         "address_line_2": "origin-address-line-2",
@@ -429,7 +428,7 @@ Request:
         "postal_code": "origin-postal-code",
         "country": "origin-country"
       },
-      "destination": {
+      "destination": {                                    // Recommended
         "name": "destination-name",
         "address_line_1": "destination-address-line-1",
         "address_line_2": "destination-address-line-2",
@@ -438,12 +437,12 @@ Request:
         "postal_code": "destination-postal-code",
         "country": "destination-country"
       },
-      "loads": [ // Used to link shipments and loads representing a "delivery"
+      "loads": [                                          // Used to link shipments and loads representing a "delivery"
         {
           "external_id": "load-external-id"
         }
       ],
-      "charges": {
+      "charges": {                                        // Recommended
         "total": 1200.23,
         "currency": "USD",
         "line_haul": 1100.32,
@@ -453,7 +452,7 @@ Request:
       },
       "line_items": [
         {
-          "external_id": "line_item_1", // The line external_id you sent us
+          "external_id": "line_item_1",                   // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
           "quantity": 5,
@@ -463,8 +462,8 @@ Request:
       ],
       "shipped_items": [
         {
-          "external_id": "1234", // Required
-          "description": "Shipped item", // Required
+          "external_id": "1234",                          // Required
+          "description": "Shipped item",                  // Required
           "class_name": '400',
           "item_type": "CARTON",
           "nmfc": "82270",
@@ -477,7 +476,7 @@ Request:
           "length": 20.0
         }
       ],
-      "references": {
+      "references": {                                     // Recommended
         "Key": "Value",
         "Key2": "Value2,Value3",
         "Anything": "You Want"
@@ -493,8 +492,8 @@ Response:
 {
   "shipments": [
     {
-      "id": 1, // HubTran's internal id for the shipment
-      "external_id": "shipment-external-id" // YOUR internal id for the shipment
+      "id": 1,                                              // HubTran's internal id for the shipment
+      "external_id": "shipment-external-id"                 // YOUR internal id for the shipment
       "status": "new",
       "tms_created_at": "2016-07-10 20:43:00 +0300",
       "tms_updated_at": "2016-07-15 20:43:00 +0300",
@@ -530,7 +529,7 @@ Response:
         "postal_code": "destination-postal-code",
         "country": "destination-country"
       },
-      "loads": [ // Used to link shipments and loads representing a "delivery"
+      "loads": [                                            // Used to link shipments and loads representing a "delivery"
         {
           "external_id": "load-external-id"
         }
@@ -545,7 +544,7 @@ Response:
       },
       "line_items": [
         {
-          "external_id": "line_item_1", // The line external_id you sent us
+          "external_id": "line_item_1",                     // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
           "quantity": 5,
@@ -555,8 +554,8 @@ Response:
       ],
       "shipped_items": [
         {
-          "external_id": "1234", // Required
-          "description": "Shipped item", // Required
+          "external_id": "1234",          // Required
+          "description": "Shipped item",  // Required
           "class_name": '400',
           "item_type": "CARTON",
           "nmfc": "82270",
@@ -595,28 +594,28 @@ Request:
 ```
 {
   "carrier": {
-    "name": "carrier name", // Required
-    "external_id": "external-id", // Required
-    "external_vendor_id": "evid", // A reference the user will use to make sure it matches TMS
-    "active": true,
-    "scac": "scac",
-    "mc_number": "mc_number",
+    "name": "carrier name",               // Required
+    "external_id": "external-id",         // Required
+    "external_vendor_id": "evid",         // A reference the user will use to make sure it matches TMS
+    "active": true,                       // Recommended
+    "scac": "scac",                       // Recommended
+    "mc_number": "mc_number",             // Recommended
     "dot_number": "dot_number",
     "ein": "ein",
-    "address_name": "Address name",
-    "address_line_1": "Address line 1",
-    "address_line_2": "Address line 2",
-    "city": "City",
-    "state": "State",
-    "postal_code": "Postal code",
-    "country": "Country",
+    "address_name": "Address name",       // Recommended
+    "address_line_1": "Address line 1",   // Recommended
+    "address_line_2": "Address line 2",   // Recommended
+    "city": "City",                       // Recommended
+    "state": "State",                     // Recommended
+    "postal_code": "Postal code",         // Recommended
+    "country": "Country",                 // Recommended
     "account_exec": "Bob",
     "labels": ["LABEL1","LABEL2"],
-    "contacts": [ // Helps us associate carriers and incoming invoices
+    "contacts": [                         // Recommended
       "joe@example.com",
       "tom@example.com"
     ],
-    "remit_to": {
+    "remit_to": {                         // Recommended
       "name": "Address name",
       "address_line_1": "Address line 1",
       "address_line_2": "Address line 2",
@@ -634,8 +633,8 @@ Response:
 ```
 {
   "carrier": {
-    "id": 1, // HubTran's internal id for the carrier
-    "external_id": "carrier-external-id", // YOUR internal id for the carrier
+    "id": 1,                                // HubTran's internal id for the carrier
+    "external_id": "carrier-external-id",   // YOUR internal id for the carrier
     "external_vendor_id": "evid",
     "active": true,
     "scac": "scac",
@@ -650,13 +649,13 @@ Response:
     "postal_code": "Postal code",
     "country": "Country",
     "account_exec": "Bob",
-    "labels": ["LABEL1","LABEL2"], // Empty list if there aren't any
+    "labels": ["LABEL1","LABEL2"],          // Empty list if there aren't any
 labels
-    "contacts": [ // Empty list if there aren't any contacts
+    "contacts": [                           // Empty list if there aren't any contacts
       "joe@example.com",
       "tom@example.com"
     ],
-    "remit_to": { // null if there is no remit to address
+    "remit_to": {                           // null if there is no remit to address
       "name": "Address name",
       "address_line_1": "Address line 1",
       "address_line_2": "Address line 2",
@@ -728,18 +727,18 @@ Request:
 ```
 {
   "payment": {
-    "external_id": "1234", // Required
-    "amount": 123.1, // Required
+    "external_id": "1234",                  // Required
+    "amount": 123.1,                        // Required
     "date": "2015-12-09",
     "method": "check",
-    "void": true, // defaults to false
+    "void": true,                           // defaults to false
     "reference": "payment_reference",
-    "invoice_number": "invoice_number", // Optional, but highly desired if it is a payment for an invoice
+    "invoice_number": "invoice_number",     // Optional, but highly desired if it is a payment for an invoice
     "description": "some description",
-    "source_system": "your_tms", // something other than "hubtran"; Required
+    "source_system": "your_tms",            // Something other than "hubtran"; Required
     "load": {
-      "load_id": "load_id", // Required if no load external_id
-      "external_id": "load_external_id", // Required if no load_id
+      "load_id": "load_id",                 // Required if no load external_id
+      "external_id": "load_external_id",    // Required if no load_id
     },
     "carrier": {
       "external_id": "carrier_external_id", // Required
@@ -753,7 +752,7 @@ Response:
 ```
 {
   "payment": {
-    "id": 1, // HubTran's internal id for the payment
+    "id": 1,                              // HubTran's internal id for the payment
     "external_id": "1234",
     "amount": 123.1,
     "date": "2015-12-09",
@@ -770,55 +769,6 @@ Response:
       "external_id": "carrier_external_id"
     }
   }
-}
-```
-
-## Document Upload
-
-Please let us know if you would like to use this API, as it needs to be enabled for your account.
-
-
-POST https://api.hubtran.com/tms/documents
-
-```
-curl -X POST https://api.hubtran.com/tms/loads/:external_id/documents \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Token token=YOUR_TOKEN" \
-  -d '{"document":{"type":"invoice","url":"url of image"}}'
-```
-
-Request:
-
-```
-{
-  "document": {
-    "external_id": "document_external_id", // Your id for the document
-    "type": "rateConfirmation",
-    "url": "URL of image to download. Required unless data is provided",
-    "data": "base64 encoded data for image. Required unless url is provided"
-  }
-}
-```
-
-Response:
-
-On success:
-```
-{
-  "document": {
-    "id": 5, // HubTran's internal id for the document
-    "token": "some-random-token", // HubTran's token that can be used in document URLs
-    "external_id": "document_external_id", // Your id for the document
-    "type": "rateConfirmation"
-  }
-}
-```
-
-On Failure:
-
-```
-{
-  "errors": ["list of errors"]
 }
 ```
 
@@ -866,9 +816,9 @@ Response:
 
 ```
 {
-  "results_per_page": 20, // how many results per page
-  "page_count": 2, // number of pages using results_per_page
-  "current_page": 1, // current page
+  "results_per_page": 20,   // how many results per page
+  "page_count": 2,          // number of pages using results_per_page
+  "current_page": 1,        // current page
   "carrier_invoices": [
     {
       "id": 123,
@@ -889,7 +839,7 @@ Response:
       },
       "line_items": [
         {
-          "external_id": "line_item_1", // The line external_id you sent us
+          "external_id": "line_item_1",           // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
           "customer_total": 150.00,
@@ -1008,13 +958,13 @@ Response:
 
 ```
 {
-  "enabled": [ # document types currently enabled for the account
+  "enabled": [  // document types currently enabled for the account
     {"name": "Bill of Lading / Packing Slip", "value":"billOfLading"},
-    # ...
+    // ...
   ],
-  "all": [ # all the document types that COULD be enabled
+  "all": [      // all the document types that COULD be enabled
     {"name": "Bill of Lading / Packing Slip", "value":"billOfLading"},
-    # ...
+    // ...
   ]
 }
 ```

@@ -25,18 +25,18 @@ choose which payloads you want to use and ignore the rest.
       "external_id": "load-external-id" // YOUR internal id
     },
     "type": "approved",
-    "id": 7, // HubTran's internal id
+    "id": 7,                            // HubTran's internal id
     "invoice": {
       "number": "invoice-number",
       "date": null,
       "date_to_pay": "1981-08-13",
       "amount_to_pay": 10.2,
       "quickpay": false,
-      "payment_strategy": "direct", // or "factor"
+      "payment_strategy": "direct",     // or "factor"
       "approver": {
         "email": "test@example.com"
       },
-      "line_items": [ // Only present if line items is enabled for the account
+      "line_items": [                   // Only present if line items is enabled for the account
         {
           "external_id": "line-item-external-id",
           "description": "line item description",
@@ -50,7 +50,7 @@ choose which payloads you want to use and ignore the rest.
           }
         }
       ],
-      "extracted_fields": {} // If custom extracted fields are configured, they'll be here
+      "extracted_fields": {}            // If custom extracted fields are configured, they'll be here
     },
     "carrier": {
       "external_id": "carrier-external-id"
@@ -67,7 +67,7 @@ choose which payloads you want to use and ignore the rest.
         }
       }
     ],
-    "combined_document_urls": [ // All documents of the same type, combined
+    "combined_document_urls": [         // All documents of the same type, combined
       {
         "type": "proofOfDelivery",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
@@ -120,7 +120,7 @@ Same as the approved payload except the type is "processed" and
       "processor": {
         "email": "test@example.com"
       },
-      "extracted_fields": {} // If custom extracted fields are configured, they'll be here
+      "extracted_fields": {}              // If custom extracted fields are configured, they'll be here
     },
     "exceptions": [
       {
@@ -146,7 +146,7 @@ Same as the approved payload except the type is "processed" and
         }
       }
     ],
-    "combined_document_urls": [ // All documents of the same type, combined
+    "combined_document_urls": [           // All documents of the same type, combined
       {
         "type": "proofOfDelivery",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",

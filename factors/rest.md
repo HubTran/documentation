@@ -29,13 +29,13 @@ Request:
 ```
 {
   "debtor": {
-    "name": "debtor name", // Required
-    "external_id": "external-id", // Required
-    "active": true,
-    "mc_number": "123456",
-    "no_buy": false, // if excluded default is false
-    "remit_to": {
-      "name": "Address name", // Required if sending a remit to address
+    "name": "debtor name",                // Required
+    "external_id": "external-id",         // Required
+    "active": true,                       // Recommended
+    "mc_number": "123456",                // Recommended
+    "no_buy": false,                      // if excluded default is false
+    "remit_to": {                         // Recommended
+      "name": "Address name",             // Required if sending a remit to address
       "address_line_1": "Address line 1",
       "address_line_2": "Address line 2",
       "city": "City",
@@ -55,14 +55,14 @@ Response:
 ```
 {
   "debtor": {
-    "id": 1, // HubTran's internal id for the debtor
-    "external_id": "debtor-external-id", // YOUR internal id for the debtor
+    "id": 1,                              // HubTran's internal id for the debtor
+    "external_id": "debtor-external-id",  // YOUR internal id for the debtor
     "name": "debtor name",
     "active": true,
     "mc_number": "123456",
     "no_buy": false,
     "remit_to": {
-      "name": "Address name", // Required if sending a remit to address
+      "name": "Address name",             // Required if sending a remit to address
       "address_line_1": "Address line 1",
       "address_line_2": "Address line 2",
       "city": "City",
@@ -99,8 +99,8 @@ the supported debtor params.
 {
   "debtors": [
     {
-      "name": "debtor name", // Required
-      "external_id": "external-id" // Required
+      "name": "debtor name",        // Required
+      "external_id": "external-id"  // Required
     }
   ]
 }
@@ -175,10 +175,10 @@ Response:
 
 ```js
 {
-  "state": "success",            // MANDATORY
-  "disclosure_details": {        // OPTIONAL, may be `null`
+  "state": "success",            // Required
+  "disclosure_details": {        // Optional, may be `null`
     "amount_mismatch_failure": {
-      "broker_amount": 50.0      // OPTIONAL additional data
+      "broker_amount": 50.0      // Optional additional data
     }
   }
 }
