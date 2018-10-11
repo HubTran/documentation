@@ -334,6 +334,7 @@ Response:
         "date": "1981-08-11",
         "date_to_pay": "1981-08-13",
         "amount_to_pay": "1110.2",
+        "currency": "USD",
         "quickpay": false,
         "approver": {
           "email": "test@example.com"
@@ -827,6 +828,7 @@ Response:
       "date": "1981-08-11",
       "date_to_pay": "1981-08-13",
       "amount_to_pay": 1110.2,
+      "currency": "USD",
       "quickpay": false,
       "approver": {
         "email": "test@example.com"

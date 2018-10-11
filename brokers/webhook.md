@@ -31,6 +31,7 @@ choose which payloads you want to use and ignore the rest.
       "date": null,
       "date_to_pay": "1981-08-13",
       "amount_to_pay": 10.2,
+      "currency": "USD",
       "quickpay": false,
       "payment_strategy": "direct",     // or "factor"
       "approver": {
