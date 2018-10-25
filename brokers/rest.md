@@ -904,12 +904,12 @@ Response:
 }
 ```
 
-## Mark Approved Invoice as Received
+## Mark Approved Invoice as Verified
 
-POST https://api.hubtran.com/tms/carrier_invoices/:id/received
+POST https://api.hubtran.com/tms/carrier_invoices/:id/verified
 
 ```
-curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/received \
+curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/verified \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN"
 ```
@@ -922,15 +922,15 @@ Response:
 }
 ```
 
-## Mark Approved Invoice as Not Received
+## Mark Approved Invoice as Not Verified
 
 This is more for when you're developing and you want to reset an invoice
-to mark as received again.
+to mark as verified again.
 
-POST https://api.hubtran.com/tms/carrier_invoices/:id/not_received
+POST https://api.hubtran.com/tms/carrier_invoices/:id/not_verified
 
 ```
-curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/not_received \
+curl -X POST https://api.hubtran.com/tms/carrier_invoices/:id/not_verified \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN"
 ```
