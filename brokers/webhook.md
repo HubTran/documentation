@@ -62,6 +62,10 @@ choose which payloads you want to use and ignore the rest.
         "type": "proofOfDelivery",
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
+        "pages": [
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+        ],
         "visibility": {
           "carrier": true,
           "customer": true
@@ -73,6 +77,10 @@ choose which payloads you want to use and ignore the rest.
         "type": "proofOfDelivery",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
+        "pages": [
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+        ],
         "visibility": {
           "carrier": true,
           "customer": true
@@ -141,6 +149,10 @@ Same as the approved payload except the type is "processed" and
         "type": "proofOfDelivery",
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
+        "pages": [
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+        ],
         "visibility": {
           "carrier": true,
           "customer": true
@@ -152,6 +164,10 @@ Same as the approved payload except the type is "processed" and
         "type": "proofOfDelivery",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
+        "pages": [
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
+          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+        ],
         "visibility": {
           "carrier": true,
           "customer": true
