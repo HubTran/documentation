@@ -63,8 +63,8 @@ choose which payloads you want to use and ignore the rest.
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
         "pages": [
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
         ],
         "visibility": {
           "carrier": true,
@@ -78,8 +78,8 @@ choose which payloads you want to use and ignore the rest.
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
         "pages": [
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/456.png"}
         ],
         "visibility": {
           "carrier": true,
@@ -150,8 +150,8 @@ Same as the approved payload except the type is "processed" and
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
         "pages": [
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
         ],
         "visibility": {
           "carrier": true,
@@ -165,8 +165,8 @@ Same as the approved payload except the type is "processed" and
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
         "pages": [
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=1"},
-          {"url": "https://api.hubtran.com/downloads/documents/unique-id?format=png&page=2"}
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/456.png"}
         ],
         "visibility": {
           "carrier": true,
