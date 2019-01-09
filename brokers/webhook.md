@@ -1,6 +1,6 @@
 # Invoice Webhook
 
-When a carrier invoice is approved, processed, or marked as an exception
+When a carrier invoice is approved or marked as an exception
 we can POST a JSON payload to an endpoint that you provide us. If you
 would like us to authenticate the endpoint you should add a token to the
 URL you provide us and verify that is correct.
@@ -9,7 +9,6 @@ Each of the payloads will have an event "type" that will allow you to
 choose which payloads you want to use and ignore the rest.
 
 * [Approved Payload](#approved-payload)
-* [Processed Payload](#processed-payload)
 * [Exception Payload](#exception-payload)
 
 ## Approved Payload
@@ -97,17 +96,6 @@ choose which payloads you want to use and ignore the rest.
       "country": "USA"
     }
   }
-}
-```
-
-## Processed Payload
-
-Same as the approved payload except the type is "processed" and
-"approver" is "processor"
-
-```
-"processor": {
-  "email": "test@example.com"
 }
 ```
 
