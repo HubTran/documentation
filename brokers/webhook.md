@@ -34,7 +34,10 @@ choose which payloads you want to use and ignore the rest.
       "quickpay": false,
       "payment_strategy": "direct",     // or "factor"
       "approver": {
-        "email": "test@example.com"
+        "email": "approver@example.com"
+      },
+      "processor": {
+        "email": "processor@example.com"
       },
       "line_items": [                   // Only present if line items is enabled for the account
         {
