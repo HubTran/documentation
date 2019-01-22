@@ -16,8 +16,9 @@ All dates + times should be in
 * [Create Payments](#create-payments)
 * [Clear Exceptions](#clear-exceptions)
 * [List Approved Invoices](#list-approved-invoices)
-* [Mark Approved Invoice as Received](#mark-approved-invoice-as-received)
-* [Mark Approved Invoice as Not Received](#mark-approved-invoice-as-not-received)
+* [Mark Approved Invoice as Verified](#mark-approved-invoice-as-verified)
+* [Mark Approved Invoice as Not Verified](#mark-approved-invoice-as-not-verified)
+* [Update Account](#update-account)
 * [Document Types](#document-types)
 
 ## Create + Update Loads
@@ -948,6 +949,37 @@ Response:
 ```
 {
   "ok": true
+}
+```
+
+## Update Account
+
+PUT https://api.hubtran.com/accounts/ours
+
+```
+curl -X PUT https://api.hubtran.com/accounts/ours \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN" \
+  -d '{"account": {"webhook_url": "http://example.com"}}'
+```
+
+Request:
+
+```
+{
+  "account": {
+    "webhook_url": "http://example.com"
+  }
+}
+```
+
+Response:
+
+```
+{
+  "account": {
+    "webhook_url": "http://example.com"
+  }
 }
 ```
 
