@@ -954,7 +954,7 @@ Response:
 }
 ```
 
-## List Exception Documents
+## List Documents
 
 In order to remove documents from this API call you'll have to call the
 transmission verification API with the transmission_id for the document
@@ -962,7 +962,7 @@ transmission verification API with the transmission_id for the document
 GET https://api.hubtran.com/tms/documents/exceptioned
 
 ```
-curl -X GET https://api.hubtran.com/tms/documents/exceptioned \
+curl -X GET https://api.hubtran.com/tms/documents \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN"
 ```
