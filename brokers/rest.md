@@ -954,6 +954,68 @@ Response:
 }
 ```
 
+## List Exception Documents
+
+In order to remove documents from this API call you'll have to call the
+transmission verification API with the transmission_id for the document
+
+GET https://api.hubtran.com/tms/documents/exceptioned
+
+```
+curl -X GET https://api.hubtran.com/tms/documents/exceptioned \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
+```
+
+Optional URL params:
+
+1. `results_per_page` - number of results to return per page, max 50
+2. `page` - which page of results to return based on `results_per_page`
+
+Response:
+
+```
+{
+  "results_per_page": 20,   // how many results per page
+  "page_count": 2,          // number of pages using results_per_page
+  "current_page": 1,        // current page
+  "documents": [
+    {
+      "id": 123,
+      "transmission_id": 456,
+      "load": {
+        "external_id": "LOAD123"
+      },
+      "type": "proofOfDelivery",
+      "proof_of_delivery": true,
+      "url": "https://api.hubtran.com/downloads/documents/unique-id",
+      "visibility": {
+        "carrier": true,
+        "customer": true
+      }
+    }
+  ]
+}
+```
+
+## Mark Transmission as Verified
+
+POST https://api.hubtran.com/tms/transmissions/:id/verified
+
+```
+curl -X POST https://api.hubtran.com/tms/transmissions/:id/verified \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN"
+```
+
+Response:
+
+```
+{
+  "ok": true
+}
+```
+
 ## Update Account
 
 PUT https://api.hubtran.com/accounts/ours
