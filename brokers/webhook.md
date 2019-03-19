@@ -10,7 +10,7 @@ choose which payloads you want to use and ignore the rest.
 
 * [Approved Payload](#approved-payload)
 * [Exception Payload](#exception-payload)
-* [Tiff Documents](#tiff-documents)
+* [Notes](#notes)
 
 ## Approved Payload
 
@@ -170,7 +170,9 @@ choose which payloads you want to use and ignore the rest.
 }
 ```
 
-## Tiff Documents
+## Notes
+
+### Tiff Documents
 HubTran can optionally enable documents to be fetched in tiff format. If this setting is enabled
 there will be a "tiff_url" alongside the "url" in "documents" and "combined_document_urls".
 It will look like this:
