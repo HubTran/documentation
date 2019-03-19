@@ -10,6 +10,7 @@ choose which payloads you want to use and ignore the rest.
 
 * [Approved Payload](#approved-payload)
 * [Exception Payload](#exception-payload)
+* [Tiff Documents](#tiff-documents)
 
 ## Approved Payload
 
@@ -167,4 +168,44 @@ choose which payloads you want to use and ignore the rest.
     ],
   }
 }
+```
+
+## Tiff Documents
+HubTran can optionally enable documents to be fetched in tiff format. If this setting is enabled
+there will be a "tiff_url" alongside the "url" in "documents" and "combined_document_urls".
+It will look like this:
+```
+    "documents": [
+      {
+        "id": 14,
+        "type": "proofOfDelivery",
+        "proof_of_delivery": true,
+        "url": "https://api.hubtran.com/downloads/documents/unique-id",
+        "tiff_url": "https://api.hubtran.com/downloads/documents/unique-id.tiff",
+        "pages": [
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
+        ],
+        "visibility": {
+          "carrier": true,
+          "customer": true
+        }
+      }
+    ],
+    "combined_document_urls": [         // All documents of the same type, combined
+      {
+        "type": "proofOfDelivery",
+        "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
+        "tiff_url": "https://api.hubtran.com/downloads/documents/combined/unique-id.tiff",
+        "proof_of_delivery": true,
+        "pages": [
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/123.png"},
+          {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/456.png"}
+        ],
+        "visibility": {
+          "carrier": true,
+          "customer": true
+        }
+      }
+    ],
 ```
