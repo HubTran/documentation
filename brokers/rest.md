@@ -73,6 +73,7 @@ Request:
     "ship_ref": "ship-ref",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
+    "office": "Chicago",
     "origin": {                                           // Recommended
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -240,6 +241,7 @@ Response:
     "ship_ref": "ship-ref",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
+    "office": "Chicago",
     "origin": {                                 // null if all fields are empty
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
