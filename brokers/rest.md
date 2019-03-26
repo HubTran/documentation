@@ -959,7 +959,7 @@ Response:
 In order to remove documents from this API call you'll have to call the
 transmission verification API with the transmission_id for the document
 
-GET https://api.hubtran.com/tms/documents/exceptioned
+GET https://api.hubtran.com/tms/documents
 
 ```
 curl -X GET https://api.hubtran.com/tms/documents \
