@@ -22,7 +22,13 @@ choose which payloads you want to use and ignore the rest.
   "event": {
     "load_id": "load-id",
     "load": {
-      "external_id": "load-external-id" // YOUR internal id
+      "external_id": "load-external-id", // YOUR internal id
+      "shipments": [
+        {
+          "external_id": "shipment-external-id",
+          "documents": [1, 2, 3 ] // ids or full documents payload?
+        }
+      ]
     },
     "type": "approved",
     "id": 7,                            // HubTran's internal id
