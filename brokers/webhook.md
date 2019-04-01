@@ -94,7 +94,7 @@ present
         ],
         "visibility": {
           "carrier": true,
-          "customer": true
+          "customer": true // based on the load customer
         }
       }
     ],
@@ -109,7 +109,7 @@ present
         ],
         "visibility": {
           "carrier": true,
-          "customer": true
+          "customer": true // based on the load customer
         }
       }
     ],
@@ -170,7 +170,7 @@ present
         ],
         "visibility": {
           "carrier": true,
-          "customer": true
+          "customer": true // based on the load customer
         }
       }
     ],
@@ -185,7 +185,7 @@ present
         ],
         "visibility": {
           "carrier": true,
-          "customer": true
+          "customer": true // based on the load customer
         }
       }
     ],
