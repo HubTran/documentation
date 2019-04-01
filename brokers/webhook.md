@@ -34,6 +34,15 @@ choose which payloads you want to use and ignore the rest.
       "currency": "USD",
       "quickpay": false,
       "payment_strategy": "direct",     // or "factor"
+      "load": {
+        "external_id": "load-external-id", // YOUR internal id
+        "shipments": [
+          {
+            "external_id": "shipment-external-id",
+            "documents": [1, 2, 3 ] // ids or full documents payload?
+          }
+        ]
+      },
       "approver": {
         "email": "approver@example.com"
       },
