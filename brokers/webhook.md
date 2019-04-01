@@ -69,6 +69,10 @@ choose which payloads you want to use and ignore the rest.
           {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
           {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
         ],
+        "shipments": [
+          {"external_id": "shipment-1"},
+          {"external_id": "shipment-2"}
+        ]
         "visibility": {
           "carrier": true,
           "customer": true
