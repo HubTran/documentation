@@ -39,7 +39,21 @@ choose which payloads you want to use and ignore the rest.
         "shipments": [
           {
             "external_id": "shipment-external-id",
-            "documents": [1, 2, 3 ] // ids or full documents payload?
+            "documents": [{
+              "id": 14,
+              "type": "proofOfDelivery",
+              "proof_of_delivery": true,
+              "url": "https://api.hubtran.com/downloads/documents/unique-id",
+              "pages": [
+                {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
+                {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
+              ],
+              "visibility": {
+                "carrier": true,
+                "customer": true // based on the shipment customer if
+present
+              }
+            }]
           }
         ]
       },
