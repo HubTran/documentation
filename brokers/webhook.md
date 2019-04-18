@@ -53,7 +53,22 @@ choose which payloads you want to use and ignore the rest.
                 "customer": true // based on the shipment customer if
 present
               }
-            }]
+            }],
+            "combined_document_urls": [
+              {
+                "type": "proofOfDelivery",
+                "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
+                "proof_of_delivery": true,
+                "pages": [
+                  {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/123.png"},
+                  {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/456.png"}
+                ],
+                "visibility": {
+                  "carrier": true,
+                  "customer": true // based on the load customer
+                }
+              }
+            ]
           }
         ]
       },
