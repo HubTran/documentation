@@ -101,7 +101,19 @@ payloads you want to use and ignore the rest.
               }
             }
           }
-        ]
+        ],
+        verification: {
+          v1: {
+            {
+              "state": "success",            // Required
+              "disclosure_details": {        // Optional, may be `null`
+                "amount_mismatch_failure": {
+                  "broker_amount": "50.0"    // Optional additional data
+                }
+              }
+            }
+          }
+        }
       }
     ],
     "non_invoice_images": [
