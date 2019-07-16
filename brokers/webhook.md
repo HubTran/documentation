@@ -92,7 +92,11 @@ present
           }
         }
       ],
-      "extracted_fields": {}            // If custom extracted fields are configured, they'll be here
+      "extracted_fields": {},            // If custom extracted fields are configured, they'll be here
+      "email_messages": [
+        {"subject": "subject of email 1"},
+        {"subject": "subject of email 2"}
+      ]
     },
     "carrier": {
       "external_id": "carrier-external-id"
@@ -159,7 +163,11 @@ present
       "processor": {
         "email": "test@example.com"
       },
-      "extracted_fields": {}              // If custom extracted fields are configured, they'll be here
+      "extracted_fields": {},              // If custom extracted fields are configured, they'll be here
+      "email_messages": [
+        {"subject": "subject of email 1"},
+        {"subject": "subject of email 2"}
+      ]
     },
     "exceptions": [
       {

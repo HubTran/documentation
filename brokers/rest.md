@@ -94,7 +94,9 @@ Request:
     "carrier": {                                          // Recommended
       "name": "carrier-name",
       "scac": "carrier-scac",
-      "external_id": "carrier-external-id"
+      "external_id": "carrier-external-id",
+      "dot_number": "dot number",
+      "mc_number": "mc number"
     },
     "customer": {                                         // Recommended
       "external_id": "customer-external-id",
@@ -261,7 +263,9 @@ Response:
     "carrier": {                                // null if no carrier
       "name": "carrier-name",
       "scac": "carrier-scac",
-      "external_id": "carrier-external-id"
+      "external_id": "carrier-external-id",
+      "dot_number": "dot number",
+      "mc_number": "mc number"
     },
     "customer": {                               // null if no customer
       "external_id": "customer-external-id",
