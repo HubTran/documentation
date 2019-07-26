@@ -164,10 +164,12 @@ Request:
       "length": 20.0
     }],
     "references": {                                       // Recommended
-      "Key": "Value",
-      "Key2": "Value2,Value3",
-      "Anything": "You Want"
-     }
+      "Example Reference Label 1": "Value1",
+      "Example Reference Label 2": "Value2",
+      // To send multiple references with the same label, comma-separate the values:
+      "Example Reference Label 3": "Value3a, Value3b"
+      ... as many label-value pairs as you want
+    }
   }
 }
 ```
@@ -379,9 +381,9 @@ Response:
       }
     ],
     "references": {                             // empty object if no references
-      "Key": "Value",
-      "Key2": "Value2,Value3",
-      "Anything": "You Want"
+      "Example Reference Label 1": "Value1",
+      "Example Reference Label 2": "Value2",
+      "Example Reference Label 3": "Value3a, Value3b"
     }
   }
 }
@@ -476,9 +478,11 @@ Request:
         }
       ],
       "references": {                                     // Recommended
-        "Key": "Value",
-        "Key2": "Value2,Value3",
-        "Anything": "You Want"
+        "Example Reference Label 1": "Value1",
+        "Example Reference Label 2": "Value2",
+        // To send multiple references with the same label, comma-separate the values:
+        "Example Reference Label 3": "Value3a, Value3b"
+        ... as many label-value pairs as you want
       }
     }
   ]
@@ -563,10 +567,10 @@ Response:
           "length": 20.0
         }
       ],
-      "references": {
-        "Key": "Value",
-        "Key2": "Value2,Value3",
-        "Anything": "You Want"
+      "references": {                       // empty object if no references
+        "Example Reference Label 1": "Value1",
+        "Example Reference Label 2": "Value2",
+        "Example Reference Label 3": "Value3a, Value3b"
       }
     }
   ]
