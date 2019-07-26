@@ -610,8 +610,10 @@ Request:
       "joe@example.com",
       "tom@example.com"
     ],
-    "remit_to": {                         // Recommended
-      "name": "Address name",
+    "remit_to": {                         // Recommended, should be
+factor remit to if carrier is factored
+      "name": "Address name",             // Required if remit_to block
+is sent
       "address_line_1": "Address line 1",
       "address_line_2": "Address line 2",
       "city": "City",
