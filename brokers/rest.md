@@ -18,6 +18,7 @@ All dates + times should be in
 * [List Approved Invoices](#list-approved-invoices)
 * [Mark Approved Invoice as Verified](#mark-approved-invoice-as-verified)
 * [Mark Approved Invoice as Not Verified](#mark-approved-invoice-as-not-verified)
+* [List Documents](#list-documents)
 * [Update Account](#update-account)
 * [Document Types](#document-types)
 
@@ -56,20 +57,15 @@ Request:
     "require_customer_rate_confirmation": false,
     "require_originals": false,
     "pro_number": "pro-number",
-    "primary_reference": "primary-reference",
-    "primary_reference_type": "primary-reference-type",
     "quantity": 1,
     "weight": 1000,
     "distance": 500,
     "mode": "truck",
     "freight_class": "class",
-    "po": "po",
-    "pickup_reference": "pickup-reference",
     "memo": "memo",
     "delivery_number": "delivery-number",
     "ppe": "ppe",
     "quote_number": "quote-number",
-    "ship_ref": "ship-ref",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
     "office": "Chicago",
@@ -225,20 +221,15 @@ Response:
     "require_customer_rate_confirmation": false,
     "require_originals": false,
     "pro_number": "pro-number",
-    "primary_reference": "primary-reference",
-    "primary_reference_type": "primary-reference-type",
     "quantity": 1,
     "weight": 1000,
     "distance": 500,
     "mode": "truck",
     "freight_class": "class",
-    "po": "po",
-    "pickup_reference": "pickup-reference",
     "memo": "memo",
     "delivery_number": "delivery-number",
     "ppe": "ppe",
     "quote_number": "quote-number",
-    "ship_ref": "ship-ref",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
     "office": "Chicago",
@@ -427,9 +418,6 @@ Request:
       "weight": 1000,
       "customer_mode": "FSC and Rate Review",
       "owner": "Owner name",
-      "po": "po",
-      "pickup_reference": "pickup-reference",
-      "ship_ref": "C16091",
       "origin": {                                         // Recommended
         "name": "origin-name",
         "address_line_1": "origin-address-line-1",
@@ -518,9 +506,6 @@ Response:
       "weight": 1000,
       "customer_mode": "FSC and Rate Review",
       "owner": "Owner name",
-      "po": "po",
-      "pickup_reference": "pickup-reference",
-      "ship_ref": "C16091",
       "origin": {
         "name": "origin-name",
         "address_line_1": "origin-address-line-1",
