@@ -59,7 +59,7 @@ Request:
     "require_customer_rate_confirmation": false,
     "require_originals": false,
     "pro_number": "pro-number",
-    "quantity": 1,
+    "quantity": 1.0,
     "weight": 1000,
     "distance": 500,
     "mode": "truck",
@@ -141,7 +141,7 @@ Request:
         "description": "line item description",
         "total": 123.45,
         "customer_total": 150.00,
-        "quantity": 5,
+        "quantity": 5.0,
         "rate": 2.0,
         "type_code": "abc",
         "carrier": {                                      // Used to calculate carrier_charge for each carrier
@@ -225,7 +225,7 @@ Response:
     "require_customer_rate_confirmation": false,
     "require_originals": false,
     "pro_number": "pro-number",
-    "quantity": 1,
+    "quantity": 1.0,
     "weight": 1000,
     "distance": 500,
     "mode": "truck",
@@ -307,7 +307,7 @@ Response:
         "description": "line item description",
         "total": 123.45,
         "customer_total": 150.00,
-        "quantity": 5,
+        "quantity": 5.0,
         "rate": 2.0,
         "type_code": "abc",
         "carrier": {                            // Used to calculate carrier_charge for each carrier
@@ -418,7 +418,7 @@ Request:
       "target_delivery_start": "2016-07-17 19:00:00 +0200",
       "target_delivery_end": "2016-07-17 19:00:00 +0200",
       "actual_delivered_at": "2016-07-17 19:00:00 +0200", // Recommended
-      "quantity": 1,
+      "quantity": 1.0,
       "weight": 1000,
       "customer_mode": "FSC and Rate Review",
       "owner": "Owner name",
@@ -458,7 +458,7 @@ Request:
           "external_id": "line_item_1",                   // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
-          "quantity": 5,
+          "quantity": 5.0,
           "rate": 2.0,
           "type_code": "abc"
         }
@@ -508,7 +508,7 @@ Response:
       "target_delivery_start": "2016-07-17 19:00:00 +0200",
       "target_delivery_end": "2016-07-17 19:00:00 +0200",
       "actual_delivered_at": "2016-07-17 19:00:00 +0200",
-      "quantity": 1,
+      "quantity": 1.0,
       "weight": 1000,
       "customer_mode": "FSC and Rate Review",
       "owner": "Owner name",
@@ -548,7 +548,7 @@ Response:
           "external_id": "line_item_1",                     // The line external_id you sent us
           "description": "line item description",
           "total": 123.45,
-          "quantity": 5,
+          "quantity": 5.0,
           "rate": 2.0,
           "type_code": "abc"
         }
@@ -907,7 +907,7 @@ Response:
           "description": "line item description",
           "total": 123.45,
           "customer_total": 150.00,
-          "quantity": 3,
+          "quantity": 3.0,
           "rate": 2.0,
           "type_code": "abc",
           "carrier": {
@@ -1009,11 +1009,11 @@ Response:
 
 If you already have an invoice submission from a carrier (paperwork and/or invoice details)
 you may want to programatically flow that into HubTran. This will create an item in the "New" queue
-just like if HubTran received an email with paperwork. 
+just like if HubTran received an email with paperwork.
 
 For invoices submitted via this API, HubTran will not perform machine learning and data extraction
 on the submitted documents. Instead we will use the invoice data you submit, as the sole source of data
-about the invoice.  
+about the invoice.
 
 POST https://api.hubtran.com/broker/invoice_submissions
 
@@ -1034,7 +1034,7 @@ Request:
     "number": "111",         // Required
     "amount": 123.0,         // Required
     "date": "2019-04-09",      // Required, in iso8601 format
-    "other": {      
+    "other": {
       "trailer": "333",  // Optional
       "factoring": true, // Optional
     },
@@ -1043,18 +1043,18 @@ Request:
     },
     "load_id": "156", // Required, ID of load in TMS
     "documents": [
-      { 
-        "external_id": "d123",      // Optional, your internal ID for the document. 
+      {
+        "external_id": "d123",      // Optional, your internal ID for the document.
         "type": "invoice",          // Required, your document type.
         "file_name": "invoice.pdf", // Required
         "data": DATA                // Required, base64-encoded document data
       },
-      { 
+      {
         "external_id": "d456",
         "document_type": "BOL",
         "file_name": "bol.pdf",
         "data": DATA
-      } 
+      }
     ]
   }
 }
@@ -1064,7 +1064,7 @@ Success Response:
 
 ```
 HTTP Status Code 201
-{ 
+{
   "invoice": {
     "id": 123 // The HubTran ID of the invoice if you want to store it
   }
@@ -1075,9 +1075,9 @@ Failure Response:
 
 ```
 HTTP Status Code 422
-{ 
+{
   "errors": [
-    { 
+    {
       "message": "carrier is missing" // Error message describing the issue.
     }
   ]

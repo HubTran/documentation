@@ -84,7 +84,7 @@ present
           "description": "line item description",
           "total": 123.45,
           "customer_total": 150.00,
-          "quantity": 5,
+          "quantity": 5.0,
           "rate": 2.0,
           "type_code": "Line Haul",
           "carrier": {
