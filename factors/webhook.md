@@ -30,6 +30,7 @@ payloads you want to use and ignore the rest.
         "invoice_amount": "$500.00",
         "po_number": "123",
         "days_due": 30,
+        "fuel_advance": true,
         "extracted_fields": {
           "key": "value"
         },
