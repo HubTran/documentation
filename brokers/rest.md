@@ -7,6 +7,8 @@ HubTran to work well, we need as much information as you can give us.
 All dates + times should be in
 [iso8601](https://en.wikipedia.org/wiki/ISO_8601) format. All `external_id`s should be strings.
 
+If you receive a status code other than 2xx, please retry your request once with a slight delay - there may be a temporary issue such as resource locking that resolves itself upon retry.
+
 * [Authentication](../rest_authentication.md)
 * [Create + Update Loads](#create--update-loads)
 * [Load Details](#load-details)
