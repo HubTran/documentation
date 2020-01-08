@@ -364,7 +364,7 @@ Response:
               {
                 "png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/xxx.png"
               }
-            ]  
+            ]
           }
         ],
         "combined_document_urls": [             // All documents of the same type, combined
@@ -408,7 +408,7 @@ Response:
           {
             "png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/xxx.png"
           }
-        ]   
+        ]
       }
     ],
   }
@@ -811,10 +811,10 @@ Request:
 {
   "payment": {
     "external_id": "1234",                  // Required
+    "status": "Paid",                       // Required, can be any value you want, but is usually something like Pending, Paid, Voided, etc
     "amount": 123.1,                        // Required
     "date": "2015-12-09",
     "method": "check",
-    "void": true,                           // defaults to false
     "reference": "payment_reference",
     "invoice_number": "invoice_number",     // Optional, but highly desired if it is a payment for an invoice
     "description": "some description",
