@@ -3,7 +3,8 @@
 All files should be sent in CSV format.
 
 The names should match what is being uploaded, carriers.csv, loads.csv,
-shipments.csv, and stops.csv. If possible add ".inprogress" to the end of
+shipments.csv, stops.csv, customer_invoices.csv, and customers.csv.
+You should add ".inprogress" to the end of
 the filename while the file is being imported so we don't attempt to
 import partially uploaded files.
 
@@ -24,6 +25,8 @@ Required fields are **bold**.
 * [Shipments](#shipments)
 * [Stops](#stops)
 * [Invoice Approval Response](#invoice-approval-response)
+* [Customer Invoices](#customer-invoices)
+* [Customers](#customers)
 
 ## Carriers
 
@@ -203,3 +206,57 @@ in HubTran.
 * combined_customer_documents_url
 * combined_carrier_documents_url
 * acknowledgement_url
+
+## Customer Invoices
+
+* **external_id**
+* **number**
+* **date**
+* **total**
+* terms
+* **customer_external_id** - same thing as the external_id in the customers file
+* **shipment_external_ids** - comma-separated list of shipment external_ids
+* ship_date
+* delivery_date
+* distance
+* distance_unit
+* weight
+* weight_unit
+* bill_to_name
+* bill_to_address_line_1
+* bill_to_address_line_2
+* bill_to_city
+* bill_to_state
+* bill_to_postal_code
+* bill_to_country
+* origin_name
+* origin_address_line_1
+* origin_address_line_2
+* origin_city
+* origin_state
+* origin_postal_code
+* origin_country
+* destination_name
+* destination_address_line_1
+* destination_address_line_2
+* destination_city
+* destination_state
+* destination_postal_code
+* destination_country
+* line_item_x_type_code
+* line_item_x_rate
+* line_item_x_description
+* line_item_x_total
+* reference_x_label
+* reference_x_value
+
+## Customers
+
+* **external_id**
+* **name**
+* account_number
+* invoicing_interval - "daily", "weekly", "monthly", or "never", default is "daily"
+* invoicing_method - "print" or "email", default is "email"
+* invoicing_days_to_pay
+* invoicing_billing_email
+* invoicing_email_link_or_attachment - "link" or "attachment", default is "link"
