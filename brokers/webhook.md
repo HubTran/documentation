@@ -116,7 +116,11 @@ present
         "visibility": {
           "carrier": true,
           "customer": true // based on the load customer
-        }
+        },
+        "load": {"external_id": "load-external-id"},
+        "shipments": [
+          {"external_id": "shipment-external-id"}
+        ]
       }
     ],
     "combined_document_urls": [         // All documents of the same type, combined
