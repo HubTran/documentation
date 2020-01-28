@@ -213,7 +213,6 @@ in HubTran.
 * **number**
 * **date**
 * **total**
-* terms
 * **customer_external_id** - same thing as the external_id in the customers file
 * **shipment_external_ids** - comma-separated list of shipment external_ids
 * ship_date
@@ -245,6 +244,7 @@ in HubTran.
 * destination_country
 * line_item_x_type_code
 * line_item_x_rate
+* line_item_x_rate_base
 * line_item_x_description
 * line_item_x_total
 * reference_x_label
