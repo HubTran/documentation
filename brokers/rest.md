@@ -15,6 +15,7 @@ If you receive a status code other than 2xx, please retry your request once with
 * [Create + Update Shipments](#create--update-shipments)
 * [Create + Update Carriers](#create--update-carriers)
 * [Bulk Create + Update Carriers](#bulk-create--update-carriers)
+* [Create + Update Customers](#create--update-customers)
 * [Create + Update Customer Invoices](#create--update-customer-invoices)
 * [Create Payments](#create-payments)
 * [Clear Exceptions](#clear-exceptions)
@@ -741,6 +742,42 @@ Response:
   ]
 }
 
+```
+
+## Create + Update Customers
+
+PUT https://api.hubtran.com/tms/customers/:external_id
+
+```
+curl -X PUT https://api.hubtran.com/tms/customers/example_id \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Token token=YOUR_TOKEN" \
+  -d '{"customer":  {...}}'
+```
+
+Request:
+
+```
+{
+  "customer": {
+    "external_id": "customer-external-id",      // Required
+    "name": "customer-name",                    // Required
+    "account_number": "customer-account-number" // Required
+  }
+}
+```
+
+Response:
+
+```
+{
+  "customer": {
+    "id": 20,                               // HubTran's internal id for the customer
+    "external_id": "customer-external-id",  // YOUR internal id for the customer
+    "name": "customer-name",
+    "account_number": "customer-account-number"
+  }
+}
 ```
 
 ## Create + Update Customer Invoices
