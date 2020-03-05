@@ -96,8 +96,14 @@ present
       ],
       "extracted_fields": {},            // If custom extracted fields are configured, they'll be here
       "email_messages": [
-        {"subject": "subject of email 1"},
-        {"subject": "subject of email 2"}
+        {
+          "subject": "subject of email 1",
+          "received_at": "2020-03-05T00:00:00.000+00:00"
+        },
+        {
+          "subject": "subject of email 2",
+          "received_at": "2020-03-06T00:00:00.000+00:00"
+        }
       ]
     },
     "carrier": {
@@ -171,8 +177,14 @@ present
       },
       "extracted_fields": {},              // If custom extracted fields are configured, they'll be here
       "email_messages": [
-        {"subject": "subject of email 1"},
-        {"subject": "subject of email 2"}
+        {
+          "subject": "subject of email 1",
+          "received_at": "2020-03-05T00:00:00.000+00:00"
+        },
+        {
+          "subject": "subject of email 2",
+          "received_at": "2020-03-06T00:00:00.000+00:00"
+        }
       ]
     },
     "exceptions": [
