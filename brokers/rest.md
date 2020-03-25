@@ -1004,7 +1004,11 @@ Response:
           "visibility": {
             "carrier": true,
             "customer": true
-          }
+          },
+          "load": {"external_id": "load-external-id"},
+          "shipments": [
+            {"external_id": "shipment-external-id"}
+          ]
         }
       ],
       "combined_document_urls": [ // All documents of the same type, combined
