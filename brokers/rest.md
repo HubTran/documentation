@@ -74,6 +74,8 @@ Request:
     "quote_number": "quote-number",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
+    "quickpay": true,
+    "days_to_pay": 2,                                     // Used with quickpay to specify terms. Leave empty if you don't have multiple quickpay terms
     "office": "Chicago",
     "origin": {                                           // Recommended
       "name": "origin-name",
@@ -240,6 +242,8 @@ Response:
     "quote_number": "quote-number",
     "load_note": "load was stolen",
     "payables_note": "do not pay",
+    "quickpay": true,
+    "days_to_pay": 2,
     "office": "Chicago",
     "origin": {                                 // null if all fields are empty
       "name": "origin-name",
