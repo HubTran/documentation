@@ -78,7 +78,7 @@ Request:
     "days_to_pay": 2,                                     // Used with quickpay to specify terms. Leave empty if you don't have multiple quickpay terms
     "office": "Chicago",
     "sales_rep": "Randy",
-    "business_unit": "Dallas",
+    "business_unit": "Managed Trans",
     "priority": "Tier 1",
     "origin": {                                           // Recommended
       "name": "origin-name",
@@ -249,7 +249,7 @@ Response:
     "days_to_pay": 2,
     "office": "Chicago",
     "sales_rep": "Randy",
-    "business_unit": "Dallas",
+    "business_unit": "Managed Trans",
     "priority": "Tier 1",
     "origin": {                                 // null if all fields are empty
       "name": "origin-name",
