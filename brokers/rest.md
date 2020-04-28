@@ -77,6 +77,9 @@ Request:
     "quickpay": true,
     "days_to_pay": 2,                                     // Used with quickpay to specify terms. Leave empty if you don't have multiple quickpay terms
     "office": "Chicago",
+    "sales_rep": "Randy",
+    "business_unit": "Dallas",
+    "priority": "Tier 1",
     "origin": {                                           // Recommended
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -245,6 +248,9 @@ Response:
     "quickpay": true,
     "days_to_pay": 2,
     "office": "Chicago",
+    "sales_rep": "Randy",
+    "business_unit": "Dallas",
+    "priority": "Tier 1",
     "origin": {                                 // null if all fields are empty
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
