@@ -45,42 +45,7 @@ choose which payloads you want to use and ignore the rest.
       "payment_strategy": "direct",     // or "factor"
       "load": {
         "external_id": "load-external-id", // YOUR internal id
-        "shipments": [
-          {
-            "external_id": "shipment-external-id",
-            "documents": [{
-              "id": 14,
-              "type": "proofOfDelivery",
-              "proof_of_delivery": true,
-              "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
-              "url": "https://api.hubtran.com/downloads/documents/unique-id",
-              "pages": [
-                {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/123.png"},
-                {"png_url": "https://api.hubtran.com/downloads/documents/unique-id/pages/456.png"}
-              ],
-              "visibility": {
-                "carrier": true,
-                "customer": true // based on the shipment customer if
-present
-              }
-            }],
-            "combined_document_urls": [
-              {
-                "type": "proofOfDelivery",
-                "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
-                "proof_of_delivery": true,
-                "pages": [
-                  {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/123.png"},
-                  {"png_url": "https://api.hubtran.com/downloads/documents/unique-ids/pages/456.png"}
-                ],
-                "visibility": {
-                  "carrier": true,
-                  "customer": true // based on the shipment customer if present
-                }
-              }
-            ]
-          }
-        ]
+        "shipments": []
       },
       "approver": {
         "email": "approver@example.com"
