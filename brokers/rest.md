@@ -1119,7 +1119,8 @@ Request:
     "source": "web_billing", // Required
     "number": "111",         // Required
     "amount": 123.0,         // Required
-    "date": "2019-04-09",      // Required, in iso8601 format
+    "date": "2019-04-09",    // Required, in iso8601 format
+    "quickpay": true,
     "other": {
       "trailer": "333",  // Optional
       "factoring": true, // Optional
