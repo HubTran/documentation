@@ -782,7 +782,8 @@ Request:
         "address_line_2": "address2",
         "city": "city",
         "state": "state",
-        "postal_code": "12345"
+        "postal_code": "12345",
+        "country": "US"
       },
       "method": "email",                                       // Required. One of "print", "email".
       "billing_interval": "daily",                             // Optional. One of "daily", "weekly", "monthly", "never". Defaults to "daily".
@@ -825,7 +826,8 @@ Response:
         "address_line_2": "address2",
         "city": "city",
         "state": "state",
-        "postal_code": "12345"
+        "postal_code": "12345",
+        "country": "US"
       },
       "method": "email",
       "billing_interval": "daily",
@@ -893,7 +895,8 @@ Request:
       "address_line_2": "address2",
       "city": "city",
       "state": "state",
-      "postal_code": "12345"
+      "postal_code": "12345",
+      "country": "US"
     },
     "origin": {                                    // Optional
       "name": "name",
@@ -901,7 +904,8 @@ Request:
       "address_line_2": "address2",
       "city": "city",
       "state": "state",
-      "postal_code": "12345"
+      "postal_code": "12345",
+      "country": "US"
     },
     "carrier_pay": 800.00,                         // Optional
     "dropped_off_at": "2019-06-02T18:43:26.000Z",  // Optional
