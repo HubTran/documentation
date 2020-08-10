@@ -948,7 +948,8 @@ Response:
       "address_line_2": "address2",
       "city": "city",
       "state": "state",
-      "postal_code": "12345"
+      "postal_code": "12345",
+      "country": "US"
     },
     "origin": {
       "name": "name",
@@ -956,7 +957,8 @@ Response:
       "address_line_2": "address2",
       "city": "city",
       "state": "state",
-      "postal_code": "12345"
+      "postal_code": "12345",
+      "country": "US"
     },
     "carrier_pay": 800.00,
     "dropped_off_at": "2019-06-02T18:43:26.000Z",
