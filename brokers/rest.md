@@ -774,7 +774,31 @@ Request:
   "customer": {
     "external_id": "customer-external-id",      // Required
     "name": "customer-name",                    // Required
-    "account_number": "customer-account-number"
+    "account_number": "customer-account-number",
+    "bill_to": {
+      "name": "name",
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "city": "city",
+      "state": "state",
+      "postal_code": "12345",
+      "hyperion_code": "aaa",
+      "cargotel_id": "bbb"
+    },
+    "billing_interval": "daily",
+    "invoice_template_name": "generic_template.doc",
+    "generate_statement_invoice": false,
+    "required_document_types": [
+      "BOL",
+      "customerInvoice"
+    ],
+    "visible_document_types": [
+      "BOL", 
+      "customerInvoice"
+    ],
+    "required_for_payables_document_types": [
+      "BOL"
+    ],
   }
 }
 ```
@@ -809,19 +833,51 @@ Request:
 {
   "customer_invoice": {
     "customer": {
-      "external_id": "customer-external-id", // Required
-      "name": "example-name"                 // Optional, recommended if new customer
+      "external_id": "customer-external-id",       // Required
+      "name": "example-name"                       // Optional, recommended if new customer
     },
-    "number": "invoice-number",              // Required
-    "amount": 1000.00,                       // Required
-    "date": "2019-04-09",                    // Required, in ISO 8601 format
-    "currency": "USD",                       // Optional, in alphabetic ISO 4217 format. Defaults to "USD".
-    "invoice_document": {                    // Optional
-      data: "base-64-data"                   // In Base64 encoding for MIME
+    "number": "invoice-number",                    // Required
+    "amount": 1000.00,                             // Required
+    "date": "2019-04-09",                          // Required, in ISO 8601 format
+    "currency": "USD",                             // Optional, in alphabetic ISO 4217 format. Defaults to "USD".
+    "invoice_document": {                          // Optional
+      data: "base-64-data"                         // In Base64 encoding for MIME
     },
-    "shipments": [                           // Required
+    "destination": {                               // Optional
+      "name": "name",
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "city": "city",
+      "state": "state",
+      "postal_code": "12345",
+      "key": "bbb"
+    },
+    "origin": {                                    // Optional
+      "name": "name",
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "city": "city",
+      "state": "state",
+      "postal_code": "12345",
+      "key": "aaa"
+    },
+    "carrier_pay": 800.00,                         // Optional
+    "dropped_off_at": "2019-07-10 20:43:00 +0300", // Optional
+    "picked_up_at": "2019-07-10 20:43:00 +0300",   // Optional
+    "other": { // All optional
+      "active_status_date": "2019-07-10 20:43:00 +0300",
+      "average_sla": 2.5,
+      "actual_sla": 2,
+      "po_number": "PO123",
+      "rush": true,
+      "unit_number": "111"
+    },
+    "shipments": [                                 // Required
       {"external_id": "123"},
       {"external_id": "456"}
+    ],
+    "loads": [                                     // Optional
+      {"external_id": "123"}
     ]
   }
 }
@@ -840,9 +896,41 @@ Response:
     "amount": 1000.00,
     "date": "2019-04-09",
     "currency": "USD",
+    "destination": {
+      "name": "name",
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "city": "city",
+      "state": "state",
+      "postal_code": "12345",
+      "key": "bbb"
+    },
+    "origin": {
+      "name": "name",
+      "address_line_1": "address1",
+      "address_line_2": "address2",
+      "city": "city",
+      "state": "state",
+      "postal_code": "12345",
+      "key": "aaa"
+    },
+    "carrier_pay": 800.00,
+    "dropped_off_at": "2019-07-10 20:43:00 +0300",
+    "picked_up_at": "2019-07-10 20:43:00 +0300",   
+    "other": {
+      "active_status_date": "2019-07-10 20:43:00 +0300",
+      "average_sla": 2.5,
+      "actual_sla": 2,
+      "po_number": "PO123",
+      "rush": true,
+      "unit_number": "111"
+    },
     "shipments": [
       {"external_id": "123"},
       {"external_id": "456"}
+    ],
+    "loads": [
+      {"external_id": "123"}
     ]
   }
 }
