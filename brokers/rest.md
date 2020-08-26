@@ -80,6 +80,7 @@ Request:
     "sales_rep": "Randy",
     "business_unit": "Managed Trans",
     "priority": "Tier 1",
+    "blind": false,
     "origin": {                                           // Recommended
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -251,6 +252,7 @@ Response:
     "sales_rep": "Randy",
     "business_unit": "Managed Trans",
     "priority": "Tier 1",
+    "blind": false,
     "origin": {                                 // null if all fields are empty
       "name": "origin-name",
       "address_line_1": "origin-address-line-1",
@@ -981,7 +983,7 @@ Response:
     "id": 10,                                       // HubTran's internal id for the customer invoice
     "customer": {
       "external_id": "customer-external-id",
-      "name": "example-name" 
+      "name": "example-name"
     },
     "number": "invoice-number",
     "amount": 1000.00,
