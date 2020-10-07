@@ -46,8 +46,8 @@ Request:
 ```
 {
   "load": {
-    "load_id": "load-id",                                 // Required
-    "external_id": "external-id",                         // Required
+    "load_id": "load-id",                                 // Required, human-friendly, but for backwards compatibility, will default to external_id
+    "external_id": "external-id",                         // Required, machine-friendly
     "status": "new",                                      // Recommended
     "brokered": true,
     "tms_created_at": "2016-07-15 19:00:00 +0200",
@@ -112,7 +112,9 @@ Request:
       "account_number": "customer-account-number"
     },
     "shipments": [                                        // Used to link the load to shipments created via the shipment API
+      // Shipments will be created if they don't exist
       {
+        "shipment_id": "shipment-id",
         "external_id": "shipment-external-id"
       }
     ],
@@ -446,7 +448,8 @@ Request:
 {
   "shipments": [
     {
-      "external_id": "shipment-external-id",              // Required
+      "shipment_id": "shipment-id",                       // Required, human-friendly, but for backwards compatibility, will default to external_id
+      "external_id": "external-id",                       // Required, machine-friendly
       "status": "new",                                    // Recommended
       "tms_created_at": "2016-07-10 20:43:00 +0300",
       "tms_updated_at": "2016-07-15 20:43:00 +0300",
@@ -484,7 +487,9 @@ Request:
         "account_number": "customer-account-number"
       },
       "loads": [                                          // Used to link shipments and loads representing a "delivery"
+        // Loads will be created if they don't already exist
         {
+          "load_id": "load-id",
           "external_id": "load-external-id"
         }
       ],
