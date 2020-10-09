@@ -367,7 +367,8 @@ Response:
         "documents": [
           {
             "id": 14,
-            "type": "proofOfDelivery",
+            "type": "billOfLading",
+            "hubtran_type_name": "Bill of Lading / Packing Slip",
             "proof_of_delivery": true,
             "url": "https://api.hubtran.com/downloads/documents/unique-id",
             "visibility": {
@@ -383,7 +384,8 @@ Response:
         ],
         "combined_document_urls": [             // All documents of the same type, combined
           {
-            "type": "proofOfDelivery",
+            "type": "billOfLading",
+            "hubtran_type_name": "Bill of Lading / Packing Slip",
             "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
             "proof_of_delivery": true,
             "visibility": {
@@ -411,7 +413,8 @@ Response:
     "documents": [             // Documents on the load
       {
         "id": 14,
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
         "visibility": {
@@ -957,7 +960,7 @@ Request:
       "postal_code": "12345",
       "country": "US"
     },
-    "bill_to": {                                   // Optional, to be used if you want to use a specific "bill-to" other than the one set on this invoice's customer 
+    "bill_to": {                                   // Optional, to be used if you want to use a specific "bill-to" other than the one set on this invoice's customer
       "name": "name",
       "address_line_1": "address1",
       "address_line_2": "address2",
@@ -1029,7 +1032,7 @@ Response:
       "postal_code": "12345",
       "country": "US"
     },
-    "bill_to": { 
+    "bill_to": {
       "name": "name",
       "address_line_1": "address1",
       "address_line_2": "address2",
@@ -1218,7 +1221,8 @@ Response:
       "documents": [
         {
           "id": 14,
-          "type": "proofOfDelivery",
+          "type": "billOfLading",
+          "hubtran_type_name": "Bill of Lading / Packing Slip",
           "proof_of_delivery": true,
           "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
           "url": "https://api.hubtran.com/downloads/documents/unique-id",
@@ -1238,7 +1242,8 @@ Response:
       ],
       "combined_document_urls": [ // All documents of the same type, combined
         {
-          "type": "proofOfDelivery",
+          "type": "billOfLading",
+          "hubtran_type_name": "Bill of Lading / Packing Slip",
           "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
           "proof_of_delivery": true,
           "visibility": {
@@ -1416,6 +1421,7 @@ HTTP Status Code 200
         {
           "id": 12345,
           "type": "billOfLading",
+          "hubtran_type_name": "Bill of Lading / Packing Slip",
           "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
           "proof_of_delivery": true,
           "url": "https://api.hubtran.com/downloads/documents/unique-id",

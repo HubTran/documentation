@@ -92,7 +92,8 @@ choose which payloads you want to use and ignore the rest.
     "documents": [
       {
         "id": 14,
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "proof_of_delivery": true,
         "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
@@ -112,7 +113,8 @@ choose which payloads you want to use and ignore the rest.
     ],
     "combined_document_urls": [         // All documents of the same type, combined
       {
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
         "pages": [
@@ -187,7 +189,8 @@ choose which payloads you want to use and ignore the rest.
     "documents": [
       {
         "id": 14,
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "proof_of_delivery": true,
         "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
@@ -207,7 +210,8 @@ choose which payloads you want to use and ignore the rest.
     ],
     "combined_document_urls": [           // All documents of the same type, combined
       {
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "proof_of_delivery": true,
         "pages": [
@@ -239,6 +243,7 @@ choose which payloads you want to use and ignore the rest.
       {
         "id": 12345,
         "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "fingerprint": "09e79148e4ba61d971b7f39c9dc245821b890916",
         "proof_of_delivery": true,
         "url": "https://api.hubtran.com/downloads/documents/unique-id",
@@ -281,7 +286,8 @@ It will look like this:
     ],
     "combined_document_urls": [         // All documents of the same type, combined
       {
-        "type": "proofOfDelivery",
+        "type": "billOfLading",
+        "hubtran_type_name": "Bill of Lading / Packing Slip",
         "url": "https://api.hubtran.com/downloads/documents/combined/unique-id",
         "tiff_url": "https://api.hubtran.com/downloads/documents/combined/unique-id.tiff",
         "proof_of_delivery": true,
