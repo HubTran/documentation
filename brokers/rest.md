@@ -792,7 +792,9 @@ Request:
         "city": "city",
         "state": "state",
         "postal_code": "12345",
-        "country": "US"
+        "country": "US",
+        "phone": "800-111-2222",                               // Optional
+        "fax": "800-111-2223"                                  // Optional
       },
       "billing_interval": "daily",                             // Optional. One of "daily", "weekly", "monthly", "never". Defaults to "daily".
       "document_visibility": {                                 // Optional. Leaves settings unchanged if omitted.
@@ -855,7 +857,9 @@ Response:
         "city": "city",
         "state": "state",
         "postal_code": "12345",
-        "country": "US"
+        "country": "US",
+        "phone": "800-111-2222",
+        "fax": "800-111-2223"
       }
       "billing_interval": "daily",
       "document_visibility": {
