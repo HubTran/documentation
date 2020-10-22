@@ -14,7 +14,6 @@ If you receive a status code other than 2xx, please retry your request once with
 * [Load Details](#load-details)
 * [Create + Update Shipments](#create--update-shipments)
 * [Create + Update Carriers](#create--update-carriers)
-* [Bulk Create + Update Carriers](#bulk-create--update-carriers)
 * [Create + Update Customers](#create--update-customers)
 * [Create + Update Customer Invoices](#create--update-customer-invoices)
 * [Create Payments](#create-payments)
@@ -721,49 +720,6 @@ labels
     }
   }
 }
-```
-
-## Bulk Create + Update Carriers
-
-PUT https://api.hubtran.com/tms/carriers/bulk
-
-```
-curl -X PUT https://api.hubtran.com/tms/carriers/bulk \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Token token=YOUR_TOKEN" \
-  -d '{"carriers": [{"name": "example name", "external_id": "example_id"}]}'
-```
-
-Request:
-
-See [Create + Update Carriers](#create--update-carriers) for the rest of
-the supported carrier params.
-
-```
-{
-  "carriers": [
-    {
-      "name": "carrier name", // Required
-      "external_id": "external-id", // Required
-    }
-  ]
-}
-```
-
-Response:
-
-```
-{
-  "carriers": [
-    {
-      "carrier": {
-        // Same as the single carrier response
-      },
-      "errors": {} // If this carrier had errors and couldn't be updated, they'll be here
-    }
-  ]
-}
-
 ```
 
 ## Create + Update Customers
