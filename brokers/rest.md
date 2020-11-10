@@ -880,7 +880,7 @@ Request:
 ```
 {
   "customer_invoice": {
-    "customer": {
+    "customer": {                                  // This is the "customer" owner of the invoice. This customer's settings will be applied and invoices will be grouped by this value.
       "external_id": "customer-external-id",       // Required
       "name": "example-name"                       // Optional, recommended if new customer
     },
@@ -919,7 +919,7 @@ Request:
       "postal_code": "12345",
       "country": "US"
     },
-    "bill_to": {                                   // Optional, to be used if you want to use a specific "bill-to" other than the one set on this invoice's customer
+    "bill_to": {                                   // Optional, to be used if you want to use a render a "bill-to" other than the one set on this invoice's customer, inside customer invoices.
       "name": "name",
       "address_line_1": "address1",
       "address_line_2": "address2",
