@@ -134,7 +134,8 @@ choose which payloads you want to use and ignore the rest.
       "city": "city",
       "state": "state",
       "postal_code": "12345",
-      "country": "USA"
+      "country": "USA",
+      "validation_result": "remit_to_zips_match"
     }
   }
 }
