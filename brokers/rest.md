@@ -523,6 +523,12 @@ Request:
         // To send multiple references with the same label, comma-separate the values:
         "Example Reference Label 3": "Value3a, Value3b"
         ... as many label-value pairs as you want
+      },
+      "data": {
+        "attribute1": true,                               // Replace "attribute1" with the actual name
+        "attribute2": 1,                                  //   of your attribute.
+        "attribute3": "Test"                              // Value can be a boolean, number, or string.
+        ... as many key-value pairs as you want
       }
     }
   ]
@@ -607,6 +613,11 @@ Response:
         "Example Reference Label 1": "Value1",
         "Example Reference Label 2": "Value2",
         "Example Reference Label 3": "Value3a, Value3b"
+      },
+      "data": {
+        "attribute1": true,
+        "attribute2": 2,
+        "attribute3": "Test"
       }
     }
   ]
