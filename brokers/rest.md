@@ -523,6 +523,10 @@ Request:
         // To send multiple references with the same label, comma-separate the values:
         "Example Reference Label 3": "Value3a, Value3b"
         ... as many label-value pairs as you want
+      },
+      "shipment_status": {
+        "pickup_geofence_certified": true,
+        "delivery_geofence_certified": false
       }
     }
   ]
@@ -607,6 +611,10 @@ Response:
         "Example Reference Label 1": "Value1",
         "Example Reference Label 2": "Value2",
         "Example Reference Label 3": "Value3a, Value3b"
+      },
+      "shipment_status": {
+        "pickup_geofence_certified": true,
+        "delivery_geofence_certified": false
       }
     }
   ]
