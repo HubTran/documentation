@@ -50,6 +50,9 @@ choose which payloads you want to use and ignore the rest.
           "external_id": "carrier-external-id"
         }
       },
+      "carrier": {
+        "external_id": "carrier-external-id"
+      },
       "approver": {
         "email": "approver@example.com"
       },
@@ -85,9 +88,6 @@ choose which payloads you want to use and ignore the rest.
         "id": 123,                       // Same submission id returned in 201 success response
         "external_id: "456"              // Your internal invoice id
       }
-    },
-    "carrier": {
-      "external_id": "carrier-external-id"
     },
     "documents": [
       {
@@ -155,6 +155,9 @@ choose which payloads you want to use and ignore the rest.
     "type": "exception",
     "invoice": {
       "id": 7,                            // HubTran's internal id
+      "carrier": {
+        "external_id": "carrier-external-id"
+      },
       "processor": {
         "email": "test@example.com"
       },
