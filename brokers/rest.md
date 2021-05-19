@@ -31,10 +31,10 @@ If you receive a status code other than 2xx, please retry your request once with
 
 Below you'll see we have "load_id" and "external_id". "load_id" is what the load would be called in the user interface of your application.  Often it is unique and immutable but some TMSs do not have that guarantee. "external_id" is YOUR internal id for the load. "external_id" should always be unique and immutable.
 
-PUT https://api.hubtran.com/tms/loads/:load_id
+PUT https://api.hubtran.com/tms/loads
 
 ```
-curl -X PUT https://api.hubtran.com/tms/loads/example_id \
+curl -X PUT https://api.hubtran.com/tms/loads \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN" \
   -d '{"load": {"load_id": "example_id", "external_id": "example_id"}}'
@@ -427,7 +427,7 @@ Response:
 
 ## Create + Update Shipments
 
-POST https://api.hubtran.com/tms/shipments
+PUT https://api.hubtran.com/tms/shipments
 
 ```
 curl -X PUT https://api.hubtran.com/tms/shipments \
@@ -615,10 +615,10 @@ Response:
 
 ## Create + Update Carriers
 
-PUT https://api.hubtran.com/tms/carriers/:external_id
+PUT https://api.hubtran.com/tms/carriers
 
 ```
-curl -X PUT https://api.hubtran.com/tms/carriers/example_id \
+curl -X PUT https://api.hubtran.com/tms/carriers \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN" \
   -d '{"carrier": {"name": "example name", "external_id": "example_id"}}'
@@ -712,10 +712,10 @@ labels
 
 ## Create + Update Customers
 
-PUT https://api.hubtran.com/tms/customers/:external_id
+PUT https://api.hubtran.com/tms/customers
 
 ```
-curl -X PUT https://api.hubtran.com/tms/customers/example_id \
+curl -X PUT https://api.hubtran.com/tms/customers \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN" \
   -d '{"customer":  {...}}'
@@ -1034,12 +1034,12 @@ Response:
 }
 ```
 
-## Create Payments
+## Create + Update Payments
 
-POST https://api.hubtran.com/tms/payments
+PUT https://api.hubtran.com/tms/payments
 
 ```
-curl -X POST https://api.hubtran.com/tms/payments \
+curl -X PUT https://api.hubtran.com/tms/payments \
   -H "Content-Type: application/json" \
   -H "Authorization: Token token=YOUR_TOKEN" \
   -d '{"payment": {...}}'
