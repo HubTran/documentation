@@ -107,7 +107,7 @@ choose which payloads you want to use and ignore the rest.
           "customer": true // based on the load customer
         },
         "load": {"external_id": "load-external-id"},
-        "carrier": {"external_id": "external-id"},
+        "carrier": {"external_id": "external-id"}, // If there is no carrier, it'll come through as null
         "shipments": [
           {"external_id": "shipment-external-id"}
         ]
@@ -206,7 +206,7 @@ choose which payloads you want to use and ignore the rest.
           "customer": true // based on the load customer
         },
         "load": {"external_id": "load-external-id"},
-        "carrier": {"external_id": "external-id"},
+        "carrier": {"external_id": "external-id"}, // If there is no carrier, it'll come through as null
         "shipments": [
           {"external_id": "shipment-external-id"}
         ]
@@ -257,7 +257,7 @@ choose which payloads you want to use and ignore the rest.
           {"png_url": "http://api.hubtran.com/downloads/documents/png-url"}
         ],
         "load": {"external_id": "external-id"},
-        "carrier": {"external_id": "external-id"},
+        "carrier": {"external_id": "external-id"}, // If there is no carrier, it'll come through as null
         "shipments": [{"external_id": "external-id"}]
       }
     ]
